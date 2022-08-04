@@ -1,0 +1,83 @@
+.proj-navbar.proj-default {
+    width: 100%;
+    z-index: 15;
+    
+    
+    &.with-bg{
+      background-color: #2C3E50;
+      padding: 30px;
+    }
+  
+    .proj-navbar {
+      &-brand {
+        color: white;
+        font-size: 30px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: bold;
+      }
+      
+  
+      &-item {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+  
+      &-link {
+        color: white;
+        font-weight: bold;
+        letter-spacing: 0.8px;
+        font-size: 15px;
+        text-transform: uppercase;
+  
+        &.active {
+        color: #bf1650;
+        }
+  
+        &:hover, &:focus {
+          color: #bf1650;
+        }
+      }
+    }
+
+  .navbar-brand{
+    //background-color: #0e101c; 
+    width: 10%;
+    text-align: center;
+
+    a{
+      text-decoration: none;
+      color: #0e101c; 
+      
+      text-shadow: 
+        1px 0px 1px #ccc, 0px 1px 1px #eee, 
+        2px 1px 1px #ccc, 1px 2px 1px #eee,
+        3px 2px 1px #ccc, 2px 3px 1px #eee,
+        4px 3px 1px #ccc, 3px 4px 1px #eee,
+        5px 4px 1px #ccc, 4px 5px 1px #eee,
+        6px 5px 1px #ccc, 5px 6px 1px #eee,
+        7px 6px 1px #ccc;
+      }
+  }
+    .proj-dropdown-menu{
+      .proj-dropdown-item{
+        color: #4e4e4e;
+
+        &.active{
+          color: #bf1650;
+        }
+      }
+    }
+  }
+
+  .proj-navbar.transparent.is-open{
+    background-color: #2C3E50;
+  }
+  
+  .proj-navbar.transparent.is-close{
+    transition: 2s;
+  }
+
+ 
+  
+  

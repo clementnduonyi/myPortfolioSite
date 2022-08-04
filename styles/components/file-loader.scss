@@ -1,0 +1,33 @@
+.img-upload-container{
+    width: 50%;
+    //height: 150px;
+
+    .img-preview-container{
+        padding: 10px;
+        margin-top: 5px;
+        
+    
+        .img-preview{
+            height: 116px;
+    
+    
+            img{
+                height: 100%;
+            }
+        }
+    
+       .spinner-container{
+           padding: 10px;
+        }
+    }
+    
+    .img-crop-container{
+        margin: 5px;
+        padding: 8px;
+       
+    
+        &-select{
+            height: 30px;
+        }
+    }
+}

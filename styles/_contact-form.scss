@@ -1,0 +1,47 @@
+.contact-form{
+   input[type = text], 
+   input[type=phone], 
+   input[type=email],
+   textarea[type=text] {
+    background-color: #0e101c;
+    border: none;
+    width: 70%;
+    color:  #b4b4b4;;
+    margin-bottom: 5px
+   }
+
+   textarea[type=text] {
+    margin-bottom: 0px
+   }
+
+   h5{
+      color: #b4b4b4;
+   }
+
+
+   label{
+    color: #ffff;
+   }
+
+   button{
+      color: #b4b4b4;
+   }
+
+   button:hover{
+    background-color: #0e101c;
+   }
+}
+
+
+.sideBar-contact-form{
+   input[type = text], 
+   input[type=phone], 
+   input[type=email],
+   textarea[type=text] {
+   
+    width: 100%;
+   
+   }
+
+  
+}

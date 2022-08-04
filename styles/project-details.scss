@@ -1,0 +1,64 @@
+//Variables
+$fontSize: .4em;
+
+
+//Prject details styling
+.project-detail {
+    height: 100%;
+    
+    header{
+      font-size: .7em;
+    }
+    
+    &-card{
+      width: 50%;
+      background: inherit;
+    }
+    .cover-container {
+      max-width: 42em;
+      color: #fff;
+      font-size: 40px;
+      margin-top: 5rem;
+      //padding: 150px 0 0;
+    }
+  
+    .cover-heading {
+      font-weight: bold;;
+      font-size: 65px;
+    }
+  
+    .page-cover {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+      
+    }
+  
+    .pj-desc{
+      font-size: $fontSize;
+    }
+
+    .tech-satck{
+      font-size: $fontSize;
+      font-style: italic;
+    }
+
+    .role{
+      font-size: $fontSize;
+    }
+  
+  
+      .btn.btn-lg.btn-secondary {
+        padding: .75rem 1.25rem;
+        color: #333;
+        text-shadow: none;
+        background-color: #fff;
+        border: .05rem solid #fff;
+      }
+
+  }
+
+ 

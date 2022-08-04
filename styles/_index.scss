@@ -1,0 +1,262 @@
+// Index -----------
+@mixin background-cover() {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+@mixin animation($animationType) {
+  -webkit-animation: $animationType; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: $animationType; /* Firefox < 16 */
+      -ms-animation: $animationType; /* Internet Explorer */
+       -o-animation: $animationType; /* Opera < 12.1 */
+          animation: $animationType;
+}
+
+@mixin animation-fill-mode($animationMode) {
+  -webkit-animation-fill-mode: $animationMode;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+  -moz-animation-fill-mode: $animationMode;
+  animation-fill-mode: $animationMode;
+}
+
+@mixin animation-delay($detail) {
+  -webkit-animation-delay: $detail;
+  -moz-animation-delay: $detail;
+  animation-delay: $detail;
+}
+
+.fadein {
+  opacity: 0;
+
+  @include animation(fadein 2s);
+  @include animation-fill-mode(forwards);
+}
+
+.title {
+  @include animation-delay(0.7s);
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.subtitle {
+  @include animation-delay(2.2s);
+  font-size: 33px;
+}
+
+.subsubTitle {
+  @include animation-delay(3.6s);
+  font-size: 18px;
+}
+
+.cta-info{
+  @include animation-delay(3.6s);
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.cover.cover-orange {
+ // background-image: linear-gradient(45deg, #bf1650 0%, #ec5990 100%);
+}
+
+.flipper {
+  height: 100%;
+  transition: 1s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.flipper.isFlipping {
+  transform: rotateY(-180deg);
+}
+
+.front, .back {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.front {
+  transform: rotateY(0deg);
+  z-index: 9999;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+
+.cover {
+  background-image: linear-gradient(45deg, #081229 0%, #0e101c 100%);
+  overflow: hidden;
+  position: relative;
+}
+//#1d1d1d #00aeef #096fb9 #081229 #0e101c
+.wrapper {
+  min-height: 100vh;
+  min-width: 100vw;
+  margin-top: 0;
+  position: relative;
+}
+
+.main-section {
+  top: 150px;
+  width: 100%;
+  padding: 120px 0 150px 0 ;
+}
+
+.hero-section{
+  width: 422px;
+  height: 530px;
+  margin-bottom: 40px;
+  h2 {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  perspective: 1000px;
+  color: white;
+  width: 400px;
+  position: relative;
+
+  &-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    z-index: 1;
+
+    &-intro {
+      font-size: 17px;
+
+      a{
+        text-decoration: none;
+        color: #bf1650;
+      }
+
+    }
+  }
+
+  .bio-statck{
+    color: #bf1650;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+ }
+
+ .image-1{
+   background-image: url('/images/Headshot.png');
+ }
+
+ .image-2{
+  background-image: url('/images/Headshot2.png');
+}
+
+.hero-welcome-text {
+  h1{
+    //text-transform: uppercase;
+    font-style: italic;
+    margin-top: 80px;
+  }
+
+  
+  h1, h2{
+    color: #bf1650;
+    font-style: italic;
+  }
+
+  h3, p{
+    color: #ffff
+  }
+
+  h3{
+    font-size: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+ 
+}
+
+.hero-welcome-bio a{
+  text-decoration: none;
+  color: #bf1650;
+  //font-size: 50px;
+}
+
+.hero-welcome-bio a:hover{
+  text-decoration: underline;
+}
+
+.hero-welcome-bio {
+  margin-top: 20px;
+  color: white;
+ 
+
+  .fa-stack {
+    font-size: 28px;
+  }
+
+  .list-inline-item {
+    > a {
+      color: #373737;
+    }
+  }
+}
+
+.hero-welcome-wrapper {
+  justify-content: flex-end;
+
+}
+
+@media (max-width: 991px) {
+  .hero-section {
+    width: 341px;
+
+    &-content {
+      width: 341px;
+    }
+  }
+
+  .hero-welcome-text > h1 {
+    margin-top: 0px;
+  }
+}
+
+.background-image {
+  position: absolute;
+  width: 1762px;
+  height: 493px;
+}
+
+.shadow-custom {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  box-shadow: -17px 13px 41px rgba(13,78,158,0.6);
+  border: 2px solid #bf1650; //#3bace5;
+
+  .shadow-inner {
+    width: 100%;
+    height: 100%;
+    box-shadow: -17px 13px 13px rgba(0,0,0,0.09);
+  }
+}
+
+.shadow-custom-orange {
+  border: 2px solid #ffff; //#bf1650; #f37d49;
+  box-shadow: -17px 13px 41px rgba(13,78,158,0.3);
+}
+
