@@ -1,4 +1,4 @@
-import CategoryApi from '@/lib/api/Categories'
+import CategoryApi from '@/lib/api/categories'
 import auth0 from '@/utils/auth0'
 
 

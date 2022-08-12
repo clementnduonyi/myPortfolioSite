@@ -1,7 +1,7 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.min.css';
-import 'suneditor/dist/css/suneditor.min.css'; // Import Sun Editor's CSS File
+import 'suneditor/dist/css/suneditor.min.css'; 
 import 'react-image-crop/dist/ReactCrop.css';
 import "suneditor/src/assets/css/suneditor-contents.css";
 import '../styles/main.scss'

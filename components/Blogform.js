@@ -12,15 +12,13 @@ const BlogForm = ({onSubmit, initialData = {}}) => {
 
     const [categories, setCategories] = useState([])
     
-
-    
     useEffect(() =>{
         fetchCat()
         
     }, [])
 
     const fetchCat = async () => {
-        const response = await axios.get('http://localhost:3001/api/v1/categories')
+        const response = await axios.get(process.env.PROJECT_API_URL + '/categories')
         const categories = setCategories(response.data)
         return categories
         //console.log(categories)

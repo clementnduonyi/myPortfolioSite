@@ -32,7 +32,7 @@ const Category = ({category, blogs, author }) => {
                 <Row>
                   <h3>Category: {category.name}</h3>
                   {blogs.map(blog =>
-                    <Col md='4'className="mb-4 post-layout-row">
+                    <Col key={blog._id} md='4'className="mb-4 post-layout-row">
                       <BlogList blog={blog} author={author}/>
                     </Col>
                   )

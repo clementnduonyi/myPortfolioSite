@@ -1,15 +1,16 @@
-import { useForm, useFieldArray } from "react-hook-form";
+import { useForm, useFieldArray, Controller } from "react-hook-form";
+import ImageUploader from 'components/uploader/ImageUploader'
 
 
 const ProjectForm = ({onSubmit, initialData = {}}) => {
-    const { register, control, handleSubmit } = useForm({defaultValues: initialData});
+    const { register, control, handleSubmit, setValue } = useForm({defaultValues: initialData});
     const { fields, append, remove } = useFieldArray({
         control: control,
         name: "technologies"
     });
 
     return(
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)} encType="multipart/form-data">
             <div className="form-group">
                 <label htmlFor="title">Title</label>
                 <input
@@ -49,6 +50,16 @@ const ProjectForm = ({onSubmit, initialData = {}}) => {
                     id="description">
                 </textarea>
             </div>
+            <div className="form-group mt-3">
+                <label htmlFor="image">Image</label>
+                <Controller
+                    name="image"
+                    control={control}
+                    rules={{ required: true }}
+                    render={({ field }) => <ImageUploader {...field} 
+                    onImageUpload={image => setValue('image', image._id)} />}
+                />
+            </div>
 
             <div className="form-group mt-3">
                 <label htmlFor="technologies">Technologies deployed</label>
@@ -64,12 +75,7 @@ const ProjectForm = ({onSubmit, initialData = {}}) => {
                 <button className="btn btn-info me-5" type="button" onClick={() => append()}>
                     Add Technology
                 </button>
-                
-               
-
-                {!initialData ?  <button type="submit" className="btn btn-success">Create project</button> 
-                              : <button type="submit" className="btn btn-info">Update project</button> 
-                }
+               <button type="submit" className="btn btn-success">Create project</button>   
             </div>
 
           

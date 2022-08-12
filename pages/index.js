@@ -60,7 +60,7 @@ const Home = () => {
       <BasePage title="Home" indexPage>
         <div className="main-section">
           <div className="background-image">
-            <img src="/images/background-index.png" />
+            <img src="/images/background-index.png" alt='background image' />
           </div>
           <Container>
             <Row>
@@ -103,7 +103,7 @@ const Home = () => {
               <Col md="6" className="hero-welcome-wrapper">
                 <div className="hero-welcome-text">
                   <h1 className={`title ${createFadeInClass()}`}>Hi!</h1>
-                  <h2 className={`subtitle ${createFadeInClass()}`}>I'm Clement Nduonyi,</h2>
+                  <h2 className={`subtitle ${createFadeInClass()}`}>I&apos;m Clement Nduonyi,</h2>
                   <h3 className={`subsubTitle ${createFadeInClass()}`}>
                     an experienced web/software developer. I have an applied knowledge of some cutting edge web development technologies, including <br/>
                     <span className='fs-3' style={{color: '#bf1650'}}>

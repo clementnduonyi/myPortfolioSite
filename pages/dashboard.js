@@ -69,7 +69,7 @@ const Dashboard = ({user, loading, categories}) => {
            <Masthead imagePath="/images/home-bg.jpg">
                 <h1>Dashboard</h1>
                 <span className="subheading">
-                    Let's write some nice blog today{' '}
+                    Let&apos;s write some nice blog today{' '}
                     <Link href='/blogs/editor'>
                         <Button className="mast-btn" color="primary">Create a new Blog</Button>
                     </Link>
@@ -92,8 +92,8 @@ const Dashboard = ({user, loading, categories}) => {
                     <h3>Blog categories</h3>
                 <Col md="8">
                         {categories.map(cat =>
-                            <ul>
-                                <li key={cat._id}>
+                            <ul key={cat._id}>
+                                <li>
                                     <Link href='/categories/edit/[id]' as={`/categories/edit/${cat._id}`}>
                                         {cat.name}
                                     </Link>

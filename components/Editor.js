@@ -1,6 +1,5 @@
 import React from 'react';
 import SunEditor,{buttonList} from "suneditor-react";
-//import 'suneditor/dist/css/suneditor.min.css'; // Import Sun Editor's CSS File
 import { useController } from 'react-hook-form';
 
    

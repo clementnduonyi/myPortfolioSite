@@ -27,8 +27,8 @@ const SideBar = () => {
              <h2>Categories</h2>
             <Row className="post-layout-row">
                 {categories.map(cat =>
-                    <ul>
-                      <li key={cat._id}>
+                    <ul key={cat._id}>
+                      <li>
                             <Link href='/categories/[slug]' as={`/categories/${cat.slug}`}>
                                 <a>{cat.name}</a>
                             </Link>

@@ -2,12 +2,12 @@ import BasePage from "@/components/BasePage";
 import BaseLayout from "@/components/layouts/BaseLayout";
 import { Row, Col, Container } from "reactstrap";
 import ContactForm from "components/shared/ContactForm";
-//import TomMap from "components/shared/map/tomMap";
+
 import dynamic from "next/dynamic";
 const TomMap = dynamic(() => import("components/shared/map/tomMap"), {
     ssr: false
   });
-//import DisplayMap from "components/shared/Map";
+
 import withAuth from "hoc/withAuth";
 import { createContact } from "actions/contacts";
 
@@ -42,7 +42,6 @@ const Contact = ({user, loading}) => {
                         />
                         </Col>
                         <Col>
-                            {/*<DisplayMap />*/}
                             <TomMap />
                         </Col>
                     </Row>
@@ -57,16 +56,3 @@ const Contact = ({user, loading}) => {
 export default  withAuth(Contact)();;
 
 
-
-/*const Contact = ({user, error, loading: userLoading}) => {
-    
-    return(
-        <BaseLayout user = {user} loading = {userLoading}>
-            <BasePage header="My contact info goes here..." title="Contact me">
-                
-            </BasePage>
-       </BaseLayout>
-    )
-}
-
-export default withAuth(Contact)();*/
