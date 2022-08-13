@@ -6,6 +6,7 @@ import { useCreateBlog } from "actions/blogs";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import BlogForm from "components/Blogform"
+import CategoryApi from 'lib/api/categories';
 
 
 const BlogEditor = ({user, loading, categories}) => {
