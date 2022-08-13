@@ -7,10 +7,10 @@ import dynamic from 'next/dynamic';
 const Editor = dynamic(() => import('components/Editor'), { ssr: false });
 
 
-const BlogForm = ({onSubmit, initialData = {}}) => {
+const BlogForm = ({onSubmit, categories, initialData = {}}) => {
     const { register, control, handleSubmit, setValue } = useForm({defaultValues: initialData});
 
-    const [categories, setCategories] = useState([])
+    /*const [categories, setCategories] = useState([])
 
     const fetchCat = async () => {
         const response = await axios.get(process.env.PROJECT_API_URL + '/categories')
@@ -22,7 +22,7 @@ const BlogForm = ({onSubmit, initialData = {}}) => {
     
     useEffect(() =>{
         fetchCat()
-    }, [])
+    }, [])*/
 
    
     

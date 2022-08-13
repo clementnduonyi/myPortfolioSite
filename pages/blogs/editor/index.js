@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import BlogForm from "components/Blogform"
 
 
-const BlogEditor = ({user, loading}) => {
+const BlogEditor = ({user, loading, categories}) => {
     const router = useRouter();
     const [createBlog, {data: createdBlog, error, loading: loadingPost}] = useCreateBlog()
 
@@ -35,11 +35,22 @@ const BlogEditor = ({user, loading}) => {
             header="Blog writter"
             title = "Create">
               <BlogForm  
-               onSubmit={ saveBlogPost } />
+               onSubmit={ saveBlogPost } categories={categories} />
             </BasePage>
         </BaseLayout>
         
     )
 }
 
+export async function getStaticProps(req, res){
+  const json = await new CategoryApi().getAll()
+  const categories = json.data;
+
+  return{
+      props: {categories},
+      revalidate: 1
+  }
+}
+
 export default withAuth(BlogEditor)('admin');
+
