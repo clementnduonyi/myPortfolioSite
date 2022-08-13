@@ -11,11 +11,6 @@ const BlogForm = ({onSubmit, initialData = {}}) => {
     const { register, control, handleSubmit, setValue } = useForm({defaultValues: initialData});
 
     const [categories, setCategories] = useState([])
-    
-    useEffect(() =>{
-        fetchCat()
-        
-    }, [])
 
     const fetchCat = async () => {
         const response = await axios.get(process.env.PROJECT_API_URL + '/categories')
@@ -24,6 +19,12 @@ const BlogForm = ({onSubmit, initialData = {}}) => {
         //console.log(categories)
     }
         
+    
+    useEffect(() =>{
+        fetchCat()
+    }, [])
+
+   
     
 
    
