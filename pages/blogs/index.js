@@ -5,12 +5,13 @@ import { useGetUser } from '@/actions/user';
 import { useRouter } from "next/router";
 import {Row, Col} from 'reactstrap';
 import BlogApi from "lib/api/blogs";
+import CategoryApi from "lib/api/categories";
 import BlogList from "components/shared/BlogList";
 import SideBar from "components/shared/SideBar";
 
 
 
-const Blog = ({blogs}) => {
+const Blog = ({blogs, categories}) => {
     const router = useRouter();
     const { data, loading} = useGetUser()
 
@@ -30,7 +31,7 @@ const Blog = ({blogs}) => {
                 <div className="blog-listing-page-content">
                     <Row>
                         <Col md="3">
-                            <SideBar />
+                            <SideBar categories={categories} />
                         </Col>
                         <Col md="9">
                             <Row>
@@ -57,6 +58,7 @@ const Blog = ({blogs}) => {
 export async function getStaticProps(req, res){
     const {data} = await new BlogApi().getAll()
     const blogs = data.map(blogPost => ({...blogPost.blog, author: blogPost.author}))
+
     
    
     return{
