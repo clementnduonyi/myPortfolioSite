@@ -62,7 +62,7 @@ const BlogDetails = ({blog, author, blogs}) => {
                             </Link>
                         </Col>
                         <Col md="3" className="post-layout-sidebar">
-                            {/*<SideBar />*/}
+                            <SideBar />
                         </Col>
 
                         <Row>
