@@ -24,11 +24,16 @@ const Cv = ({user, loading}) => {
                     <Container>
                         <Row>
                             <Col md={{size: 8, offset:2}}>
-                                <iframe style={{width: "100%", height: "800px"}} src="/clement_nduonyi_cv.pdf" />
-                                <ContactForm 
-                                onSubmit={createContact}  
-                                title="Get in touch with me"
-                                className="contact-title"/>
+
+                                <iframe style={{width: "100%", height: "800px"}} src="./clement_nduonyi_cv.pdf" />
+
+                                <div>
+                                    <ContactForm 
+                                    onSubmit={createContact}  
+                                    title="Get in touch with me"
+                                    className="contact-title"/>
+                                </div>
+                               
                             </Col>
                         </Row>
                 
