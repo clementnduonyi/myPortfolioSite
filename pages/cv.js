@@ -25,7 +25,7 @@ const Cv = ({user, loading}) => {
                         <Row>
                             <Col md={{size: 8, offset:2}}>
 
-                                <iframe style={{width: "100%", height: "800px"}} src="./clement_nduonyi_cv.pdf" />
+                                <iframe style={{width: "100%", height: "800px"}}src="/clement_nduonyi_cv.pdf" />
 
                                 <div>
                                     <ContactForm 
