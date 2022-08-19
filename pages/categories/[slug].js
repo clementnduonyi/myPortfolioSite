@@ -25,10 +25,10 @@ const Category = ({category, blogs, author }) => {
       >
         <div className="post-layout category-detail">
           <Row>
-            <Col md="3">
+            <Col xs={{span: 12, order: 2}} md="3">
                 <SideBar />
             </Col>
-            <Col md="9">
+            <Col xs={{span: 12, order: 1}} md="9">
                 <Row>
                   <h3>Category: {category.name}</h3>
                   {blogs.map(blog =>

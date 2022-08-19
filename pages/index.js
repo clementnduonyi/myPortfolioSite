@@ -134,10 +134,10 @@ const Home = () => {
               </Col>
             </Row>
             <Row>
-              <Col>
+              <Col xs={{span: 12, order: 1}} md='6'>
                 <ContactForm onSubmit={createContact} title="Get in touch with me" className="contact-title" />
               </Col>
-              <Col>
+              <Col md='6'>
                   <TomMap />
               </Col>
             </Row>
