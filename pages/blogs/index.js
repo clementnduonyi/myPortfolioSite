@@ -25,7 +25,7 @@ const Blog = ({blogs, categories}) => {
                 title = "Posts"
                 indexPage>
                 <div className="blog-listing-page-content">
-                    <Row>
+                    <Row className="global-margin">
                         
                         <Col xs={{span: 12, order: 1}} md='9'>
                             <Row>

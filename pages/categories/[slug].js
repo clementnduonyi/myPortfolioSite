@@ -23,12 +23,12 @@ const Category = ({category, blogs, author }) => {
       metaDescription={category.name}
       title = {`Category | ${category.name}`}
       >
-        <div className="post-layout category-detail">
+        <div className="post-layout category-detail global-margin">
           <Row>
-            <Col xs={{span: 12, order: 2}} md="3">
+            <Col xs={{span: 12, order: 1}} md="3">
                 <SideBar />
             </Col>
-            <Col xs={{span: 12, order: 1}} md="9">
+            <Col xs={{span: 12, order: 2}} md="9">
                 <Row>
                   <h3>Category: {category.name}</h3>
                   {blogs.map(blog =>
