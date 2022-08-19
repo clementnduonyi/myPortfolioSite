@@ -5,7 +5,6 @@ import { useGetUser } from '@/actions/user';
 import { useRouter } from "next/router";
 import {Row, Col} from 'reactstrap';
 import BlogApi from "lib/api/blogs";
-import CategoryApi from "lib/api/categories";
 import BlogList from "components/shared/BlogList";
 import SideBar from "components/shared/SideBar";
 
@@ -22,18 +21,13 @@ const Blog = ({blogs, categories}) => {
             navClass="transparent" 
             className="blog-listing-page"
             user={data} loading={loading}>
-            
-           
             <BasePage
                 title = "Posts"
                 indexPage>
-                
                 <div className="blog-listing-page-content">
                     <Row>
-                        <Col md="3">
-                            <SideBar categories={categories} />
-                        </Col>
-                        <Col md="9">
+                        
+                        <Col xs={{span: 12, order: 1}} md='9'>
                             <Row>
                                 {blogs.map(blog =>
                                     <Col 
@@ -43,10 +37,10 @@ const Blog = ({blogs, categories}) => {
                                     </Col>
                                 )}
                             </Row>
-                            
                         </Col>
-                        
-                        
+                        <Col xs={{order: 2}} md='3'>
+                            <SideBar categories={categories} />
+                        </Col>
                     </Row>
                 </div>
             </BasePage>
