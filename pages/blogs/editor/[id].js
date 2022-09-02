@@ -34,6 +34,7 @@ const PostEditor = ({user, loading}) => {
                     <BlogForm
                      onSubmit= { _updateBlog }
                      initialData= { initialData }
+                     loading= {isUpdateLoading}
                     />
 
                 }
