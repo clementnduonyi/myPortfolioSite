@@ -33,8 +33,8 @@ const PostEditor = ({user, loading, categories}) => {
             title="Update">
                 {initialData && 
                     <BlogForm
-                     onSubmit= { _updateBlog} 
-                     categories={categories} 
+                     onSubmit= { _updateBlog } 
+                     categories={ categories } 
                      initialData= { initialData }
                      
                     />
