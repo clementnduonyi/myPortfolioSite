@@ -6,9 +6,10 @@ import { toast } from "react-toastify";
 import { useGetBlog, useUpdateBlog  } from "actions/blogs";
 import { useRouter } from "next/router";
 import BlogForm from "components/Blogform"
+import CategoryApi from 'lib/api/categories';
 
 
-const PostEditor = ({user, loading}) => {
+const PostEditor = ({user, loading, categories}) => {
    const router = useRouter()
    const {  data: initialData} = useGetBlog(router.query.id)
    const [updateBlog, { error, loading: isUpdateLoading }] =  useUpdateBlog()
@@ -32,9 +33,10 @@ const PostEditor = ({user, loading}) => {
             title="Update">
                 {initialData && 
                     <BlogForm
-                     onSubmit= { _updateBlog }
+                     onSubmit= { _updateBlog} 
+                     categories={categories} 
                      initialData= { initialData }
-                     loading= {isUpdateLoading}
+                     
                     />
 
                 }
@@ -44,5 +46,17 @@ const PostEditor = ({user, loading}) => {
         
     )
 }
+
+
+export async function getStaticProps(req, res){
+    const json = await new CategoryApi().getAll()
+    const categories = json.data;
+  
+    return{
+        props: {categories},
+        revalidate: 1
+    }
+  }
+  
 
 export default withAuth(PostEditor)('admin');
