@@ -49,7 +49,7 @@ const Dashboard = ({user, loading, categories}) => {
             { blogs && blogs.filter(blog => blog.status === status).map(blog =>
                 <li key={blog._id}>
                     <Link href='/blogs/editor/[id]' as={`/blogs/editor/${blog._id}`}>
-                        <a>{blog.title}</a>
+                        {blog.title}
                     </Link>
                     <BlogDropdown items={ createOptions(blog) }/>
                     
