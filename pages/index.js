@@ -62,7 +62,7 @@ const Home = () => {
           <div className="background-image">
             <img src="/images/background-index.png" alt='background image' />
           </div>
-          <Container>
+          <Container fluid={true}>
             <Row>
               <Col md="6">
                 <div className="hero-section">
@@ -133,16 +133,21 @@ const Home = () => {
                 </div>
               </Col>
             </Row>
-            <Row className="global-margin">
-              <Col xs={{span: 12, order: 2}} md='6'>
-                <ContactForm onSubmit={createContact} title="Get in touch with me" className="contact-title" />
-              </Col>
-              <Col md='6'>
-                  <TomMap />
-              </Col>
-            </Row>
+
+           
+              <Row className='container-fluid'>
+                <Col xs={{span: 12, order: 1}} md='6' className='ms-0'>
+                  <ContactForm onSubmit={createContact} title="Get in touch with me" className="contact-title" />
+                </Col>
+                <Col xs={{span: 12, order: 2}} md='6' className='ms-0'>
+                    <TomMap />
+                </Col>
+              </Row>
+        
+           
           </Container>
         </div>
+        
       </BasePage>
     </BaseLayout>
   )
