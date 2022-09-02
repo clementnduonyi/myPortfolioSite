@@ -33,25 +33,18 @@ const BlogEditor = ({user, loading, categories}) => {
         loading = {loading}
         >
             <BasePage 
-            header="Blog writter"
+            header="Write new blog"
             title = "Create">
               <BlogForm  
-               onSubmit={ saveBlogPost } categories={categories} />
+               onSubmit={ saveBlogPost } />
+               loading = {blogLoding}
             </BasePage>
         </BaseLayout>
         
     )
 }
 
-export async function getStaticProps(req, res){
-  const json = await new CategoryApi().getAll()
-  const categories = json.data;
 
-  return{
-      props: {categories},
-      revalidate: 1
-  }
-}
 
 export default withAuth(BlogEditor)('admin');
 

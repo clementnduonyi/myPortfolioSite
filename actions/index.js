@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from "axios";
+
 
 export const fetcher =  (url) => 
    fetch(url).then(async res => {
