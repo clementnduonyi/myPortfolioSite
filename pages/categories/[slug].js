@@ -20,10 +20,11 @@ const Category = ({category, blogs, author }) => {
     >
     <BasePage
     indexPage
+    className="blog-listing-page"
     metaDescription={category.name}
     title = {`Category | ${category.name}`}
     >
-      <div className="post-layout category-detail global-margin">
+      <div className="blog-listing-page-content">
         <Row className="mb-5"> 
           <Col xs={{span: 12, order: 1}} md="3">
             <SideBar />
