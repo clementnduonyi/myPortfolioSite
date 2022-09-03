@@ -26,10 +26,10 @@ const Category = ({category, blogs, author }) => {
     >
       <div className="blog-listing-page-content">
         <Row className="mb-5"> 
-          <Col xs={{span: 12, order: 1}} md="3">
+          <Col xs={{span: 12, order: 2}} md={{span: 3, order: 1}}>
             <SideBar />
           </Col>       
-          <Col xs={{span: 12, order: 1}} md='9'>
+          <Col xs={{span: 12, order: 1}} md={{span: 9, order: 2}}>
             <Row>
               <h3>Category: {category.name}</h3>
                 {blogs.map(blog =>
