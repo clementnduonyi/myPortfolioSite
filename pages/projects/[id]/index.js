@@ -4,12 +4,14 @@ import { useGetUser } from '@/actions/user';
 import ProjectApi from "@/lib/api/projects";
 import { Badge, Card, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
 import { useRouter } from "next/router";
+import Spinner from 'components/shared/spinner';
 
 
 
 
 const Project = ({project}) => {
     const { data: dataU, loading: loadingU} = useGetUser()
+    const router = useRouter();
     return(
         <BaseLayout
         navigationbar 

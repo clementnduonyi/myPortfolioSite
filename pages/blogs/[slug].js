@@ -9,6 +9,7 @@ import SideBar from 'components/shared/SideBar'
 import RelatedPost from 'components/shared/RelatedPost'
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Spinner from 'components/shared/spinner';
 import dynamic from 'next/dynamic';
 const SunEditor = dynamic(() => import("suneditor-react"), { ssr: false });
 
