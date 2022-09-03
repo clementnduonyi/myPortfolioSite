@@ -17,10 +17,10 @@ const Category = ({category, blogs, author }) => {
     navigationbar 
     user={data} loading={loading} 
     navClass="transparent"
+    className="blog-listing-page"
     >
     <BasePage
     indexPage
-    className="blog-listing-page"
     metaDescription={category.name}
     title = {`Category | ${category.name}`}
     >
