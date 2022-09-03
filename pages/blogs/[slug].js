@@ -8,13 +8,15 @@ import Avatar from 'components/shared/Avatar'
 import SideBar from 'components/shared/SideBar'
 import RelatedPost from 'components/shared/RelatedPost'
 import Link from "next/link";
+import { useRouter } from "next/router";
 import dynamic from 'next/dynamic';
 const SunEditor = dynamic(() => import("suneditor-react"), { ssr: false });
 
 
 const BlogDetails = ({blog, author, blogs}) => {
     const { data, loading } = useGetUser()
-   
+    const router = useRouter();
+
     return(
         <BaseLayout
         user={data} 
@@ -26,41 +28,52 @@ const BlogDetails = ({blog, author, blogs}) => {
             indexPage>
                 <div className="post-layout">
                     <Row>
-                        <Col md="9">
-                            <Avatar 
-                            title={author.name}
-                            image={author.picture}
-                            date={blog.createdAt}
-                            />
-                            <span>&larr; </span>
-                            <Link href="/blogs">
-                                Back to blogs
-                            </Link>
-                            <div style={{  backgroundImage: 'linear-gradient(45deg, #081229 0%, #0e101c 100%)' }} className="mt-3 mb-3">
-                                <header>
-                                    <h1>{blog.title}</h1>
-                                </header>
-                                
-                                {/*<h2>{blog.subTitle}</h2>*/}
+                    {router.isFallback &&
+                        <div className="spinner-container">
+                            <Spinner />
+                        </div>
+                    }
+
+                    {!router.isFallback &&
+                        <>
                             
-                            <SunEditor
-                                setContents={blog.body}
-                                hideToolbar={true} 
-                                disable={true}
-                                height='500px'
-                                width='100%'
-                                readOnly
-                                setOptions={{
-                                    mode: 'balloon',
-                                    }}
-                                setDefaultStyle="color: #b4b4b4; background-image: linear-gradient(45deg, #081229 0%, #0e101c 100%)"
-                                /> 
-                            </div>
-                            <span>&larr; </span>
-                            <Link href="/blogs">
+                            <Col md="9">
+                                <Avatar 
+                                title={author.name}
+                                image={author.picture}
+                                date={blog.createdAt}
+                                />
+                                <span>&larr; </span>
+                                <Link href="/blogs">
                                     Back to blogs
-                            </Link>
-                        </Col>
+                                </Link>
+                                <div style={{  backgroundImage: 'linear-gradient(45deg, #081229 0%, #0e101c 100%)' }} className="mt-3 mb-3">
+                                    <header>
+                                        <h1>{blog.title}</h1>
+                                    </header>
+                                    
+                                    {/*<h2>{blog.subTitle}</h2>*/}
+                                
+                                <SunEditor
+                                    setContents={blog.body}
+                                    hideToolbar={true} 
+                                    disable={true}
+                                    height='500px'
+                                    width='100%'
+                                    readOnly
+                                    setOptions={{
+                                        mode: 'balloon',
+                                        }}
+                                    setDefaultStyle="color: #b4b4b4; background-image: linear-gradient(45deg, #081229 0%, #0e101c 100%)"
+                                    /> 
+                                </div>
+                                <span>&larr; </span>
+                                <Link href="/blogs">
+                                        Back to blogs
+                                </Link>
+                            </Col>
+                        </>
+                    }
                         <Col md="3" className="post-layout-sidebar">
                             <SideBar />
                         </Col>
@@ -93,7 +106,7 @@ const BlogDetails = ({blog, author, blogs}) => {
 export async function getStaticPaths() {
     const {data} = await new BlogApi().getAll()
     const paths = data.map(({blog}) => ({params: { slug: blog.slug }}))
-    return { paths, fallback: false};
+    return { paths, fallback: true};
         
 }
 

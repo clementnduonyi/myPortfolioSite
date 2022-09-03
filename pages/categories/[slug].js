@@ -5,12 +5,15 @@ import CategoryApi from "@/lib/api/categories";
 import BlogList from "components/shared/BlogList";
 import SideBar from "components/shared/SideBar";
 import { Row, Col } from "reactstrap";
+import { useRouter } from "next/router";
+import Spinner from 'components/shared/spinner';
 
 
 
 
 const Category = ({category, blogs, author }) => {
   const { data, loading} = useGetUser()
+  const router = useRouter()
 
     return(
       <BaseLayout
@@ -29,15 +32,25 @@ const Category = ({category, blogs, author }) => {
                 <SideBar />
             </Col>
             <Col xs={{span: 12, order: 2}} md="9">
-                <Row>
-                  <h3>Category: {category.name}</h3>
-                  {blogs.map(blog =>
-                    <Col key={blog._id} md='4'className="mb-4 post-layout-row">
-                      <BlogList blog={blog} author={author}/>
-                    </Col>
-                  )
-                }  
-              </Row>
+              {router.isFallback &&
+                <div className="spinner-container">
+                  <Spinner />
+                </div>
+              }
+              {!router.isFallback &&
+                <>
+                  <Row>
+                    <h3>Category: {category.name}</h3>
+                    {blogs.map(blog =>
+                      <Col key={blog._id} md='4'className="mb-4 post-layout-row">
+                        <BlogList blog={blog} author={author}/>
+                      </Col>
+                      )
+                    }  
+                  </Row>
+                </>
+              }
+              
             </Col>
           </Row>
         </div>
@@ -55,10 +68,10 @@ export async function getStaticPaths() {
 
   const paths = data.map(category => {
       return {
-          params: {slug: category.slug}
+        params: {slug: category.slug}
       }
   })
-  return { paths, fallback: false};
+  return { paths, fallback: true};
       
 }
 
