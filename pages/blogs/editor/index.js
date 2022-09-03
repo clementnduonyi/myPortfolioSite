@@ -6,10 +6,10 @@ import { useCreateBlog } from "actions/blogs";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 import BlogForm from "components/Blogform"
-import CategoryApi from 'lib/api/categories';
+//import CategoryApi from 'lib/api/categories';
 
 
-const BlogEditor = ({user, loading, categories}) => {
+const BlogEditor = ({user, loading}) => {
     const router = useRouter();
     const [createBlog, {data: createdBlog, error, loading: loadingPost}] = useCreateBlog()
 
@@ -36,22 +36,13 @@ const BlogEditor = ({user, loading, categories}) => {
             header="Blog writter"
             title = "Create">
               <BlogForm  
-               onSubmit={ saveBlogPost } categories={categories} />
+               onSubmit={ saveBlogPost } />
             </BasePage>
         </BaseLayout>
         
     )
 }
 
-export async function getStaticProps(req, res){
-  const json = await new CategoryApi().getAll()
-  const categories = json.data;
-
-  return{
-      props: {categories},
-      revalidate: 1
-  }
-}
 
 export default withAuth(BlogEditor)('admin');
 

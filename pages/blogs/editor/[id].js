@@ -9,7 +9,7 @@ import BlogForm from "components/Blogform"
 import CategoryApi from 'lib/api/categories';
 
 
-const PostEditor = ({user, loading, categories}) => {
+const PostEditor = ({user, loading}) => {
    const router = useRouter()
    const {  data: initialData} = useGetBlog(router.query.id)
    const [updateBlog, { error, loading: isUpdateLoading }] =  useUpdateBlog()
@@ -33,9 +33,8 @@ const PostEditor = ({user, loading, categories}) => {
             title="Update">
                 {initialData && 
                     <BlogForm
-                     onSubmit= { _updateBlog } 
-                     categories={ categories } 
-                     initialData= { initialData }
+                     onSubmit={ _updateBlog }
+                     initialData={ initialData }
                      
                     />
 
@@ -48,15 +47,8 @@ const PostEditor = ({user, loading, categories}) => {
 }
 
 
-export async function getStaticProps(req, res){
-    const json = await new CategoryApi().getAll()
-    const categories = json.data;
-  
-    return{
-        props: {categories},
-        revalidate: 1
-    }
-  }
-  
+
+
+
 
 export default withAuth(PostEditor)('admin');

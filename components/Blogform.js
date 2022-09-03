@@ -7,27 +7,21 @@ import dynamic from 'next/dynamic';
 const Editor = dynamic(() => import('components/Editor'), { ssr: false });
 
 
-const BlogForm = ({onSubmit, categories, initialData = {}}) => {
+const BlogForm = ({onSubmit, initialData = {}}) => {
     const { register, control, handleSubmit, setValue } = useForm({defaultValues: initialData});
+    const [categories, setCategories] = useState([])
 
-    /*const [categories, setCategories] = useState([])
-
-    const fetchCat = async () => {
+    const getCats = async () => {
         const response = await axios.get(process.env.PROJECT_API_URL + '/categories')
-        const categories = setCategories(response.data)
-        return categories
-        //console.log(categories)
+        setCategories(response.data)
     }
-        
-    
+
     useEffect(() =>{
-        fetchCat()
-    }, [])*/
+        getCats()
+    }, [])
 
    
     
-
-   
     return(
         <form onSubmit={handleSubmit(onSubmit)} encType="multipart/form-data">
              <div className="form-group">
@@ -53,14 +47,14 @@ const BlogForm = ({onSubmit, categories, initialData = {}}) => {
                 <label htmlFor="category">Category</label>
                 
                 <select {...register("category")}>
-                <option value="">Select</option>
-                {categories.map(category =>
-                    <option 
-                    key={category._id} 
-                    value={category._id}>
-                        {category.name}
-                    </option>
-                )}
+                    <option value="">Select</option>
+                    {categories.map(category =>
+                        <option 
+                        key={category._id} 
+                        value={category._id}>
+                            {category.name}
+                        </option>
+                    )}
                 </select>
             </div>
            
