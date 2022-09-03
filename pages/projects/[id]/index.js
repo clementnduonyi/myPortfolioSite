@@ -3,15 +3,12 @@ import BasePage from "@/components/BasePage";
 import { useGetUser } from '@/actions/user';
 import ProjectApi from "@/lib/api/projects";
 import { Badge, Card, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
-import { useRouter } from "next/router";
-import Spinner from 'components/shared/spinner';
 
 
 
 
 const Project = ({project}) => {
     const { data: dataU, loading: loadingU} = useGetUser()
-    const router = useRouter();
     return(
         <BaseLayout
         navigationbar 
@@ -24,71 +21,60 @@ const Project = ({project}) => {
             metaDescription={project.description}
             title ={project.title}
             >
-                <div className="project-detail">
-                    {router.isFallback &&
-                        <div className="spinner-container">
-                        <Spinner />
-                        </div>
-                    }
-
-                    {!router.isFallback &&
-                        <>
-                            <div className="cover-container d-flex h-100 p-3 mx-auto flex-column">
-                                <main role="main" className="">
-                                    <Card style={{height: '300px'}} className="project-detail-card">
-                                        <CardImg style={{width: '600px', height: '300px'}} className="mb-2" tag="h6">
-                                            <img 
-                                            src={project.image.url} 
-                                            alt= {`${project.title.substr(0, 20)}...`}
-                                            style={{width: '100%', height: '100%'}} />
-                                        </CardImg>
-                                    
-                                        <CardImgOverlay className="project-card-overlay">
-                                            <CardTitle tag="h5" className="project-card-header" >
-                                                <h1>{ project.title }</h1>
-                                            </CardTitle>
-                                        
-                                        </CardImgOverlay>
-                                    </Card>
-                                    
-                                    <div className="mt-4">
-                                        <header>Project description</header>
-                                        <article className="pj-desc">
-                                            <p style={{whiteSpace: 'pre-wrap'}}>{project.description}</p>
-                                        </article>
-                                    </div>
-
-                                    <div className="mt-4">
-                                        <summary className="pj-desc">
-                                            <a href ={project.projectUrl} target="_">View project</a> 
-                                        </summary>
-                                    </div>
-
-                                
-                                    <div className="mt-5">
-                                        <header>Tech Stack</header>
-                                        <p className="tech-satck mb-0">
-                                            {project.technologies.map(technology => {
-                                                return(
-                                                    <Badge  key={technology.toString()} pill color="danger" className="me-1">
-                                                        {technology.technology}
-                                                    </Badge>
-                                                )
-                                            })}
-                                        </p>
-                                    </div>
-                                    
-                                    <div className="mt-5">
-                                        <header>Role</header>
-                                        <p className="role">
-                                        { project.role_description }
-                                        </p>
-                                    </div>
-                                </main>
+              <div className="project-detail">
+                    <div className="cover-container d-flex h-100 p-3 mx-auto flex-column">
+                        <main role="main" className="">
+                            <Card style={{height: '300px'}} className="project-detail-card">
+                                <CardImg style={{width: '600px', height: '300px'}} className="mb-2" tag="h6">
+                                    <img 
+                                    src={project.image.url} 
+                                    alt= {`${project.title.substr(0, 20)}...`}
+                                    style={{width: '100%', height: '100%'}} />
+                                </CardImg>
+                            
+                                <CardImgOverlay className="project-card-overlay">
+                                    <CardTitle tag="h5" className="project-card-header" >
+                                        <h1>{ project.title }</h1>
+                                    </CardTitle>
+                                   
+                                </CardImgOverlay>
+                            </Card>
+                            
+                            <div className="mt-4">
+                                <header>Project description</header>
+                                <article className="pj-desc">
+                                    <p style={{whiteSpace: 'pre-wrap'}}>{project.description}</p>
+                                </article>
                             </div>
-                        </>
-                    }
-                    
+
+                            <div className="mt-4">
+                                <summary className="pj-desc">
+                                    <a href ={project.projectUrl} target="_">View project</a> 
+                                </summary>
+                            </div>
+
+                           
+                            <div className="mt-5">
+                                <header>Tech Stack</header>
+                                <p className="tech-satck mb-0">
+                                    {project.technologies.map(technology => {
+                                        return(
+                                            <Badge  key={technology.toString()} pill color="danger" className="me-1">
+                                                {technology.technology}
+                                            </Badge>
+                                        )
+                                    })}
+                                </p>
+                            </div>
+                            
+                            <div className="mt-5">
+                                <header>Role</header>
+                                <p className="role">
+                                   { project.role_description }
+                                </p>
+                            </div>
+                        </main>
+                    </div>
                 </div>
             </BasePage>
                 
@@ -107,7 +93,7 @@ export async function getStaticPaths(){
         }
     })
 
-    return {paths, fallback: true}
+    return {paths, fallback: blocking}
 }
 
 
