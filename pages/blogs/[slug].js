@@ -93,7 +93,7 @@ const BlogDetails = ({blog, author, blogs}) => {
 export async function getStaticPaths() {
     const {data} = await new BlogApi().getAll()
     const paths = data.map(({blog}) => ({params: { slug: blog.slug }}))
-    return { paths, fallback: blocking};
+    return { paths, fallback: 'blocking'};
         
 }
 
