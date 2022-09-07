@@ -9,7 +9,7 @@ import BlogApi from "lib/api/blogs";
 import BlogList from "components/shared/BlogList";
 import HeroSection from "components/HeroSection"
 import HeroWelcome from "components/HeroWelcome"
-
+import WorkCard from "components/shared/WorkCard"
 import dynamic from "next/dynamic";
 const TomMap = dynamic(() => import("components/shared/map/tomMap"), {
     ssr: false
@@ -44,6 +44,10 @@ const Home = ({blogs}) => {
             </Row>
           </Container>
         </div>
+        <section>
+          <WorkCard />
+        </section>
+        
         <section className="blog-listing-page-content">
           {<Row>
             {blogs.map(blog =>

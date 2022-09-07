@@ -37,8 +37,8 @@ const Projects = ({projects: initialProjects}) => {
         >
             <BasePage 
              indexPage
-            className="project-page" 
-            title="Projects"
+             className="project-page" 
+             title="Projects"
            >
                 <div className="project-page-content">
                     <Row style={{width: '100%'}} className="mb-3">
