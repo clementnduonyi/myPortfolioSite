@@ -16,7 +16,7 @@ const TomMap = dynamic(() => import("components/shared/map/tomMap"), {
   });
 
 
-const Home = ({blogs}) => {
+const Home = ({blogs, projects}) => {
   const [isFlipping, setIsFlipping] = useState(false);
   const { data, loading } = useGetUser();
 
@@ -45,7 +45,7 @@ const Home = ({blogs}) => {
           </Container>
         </div>
         <section>
-          <WorkCard />
+          <WorkCard projects={projects} />
         </section>
         
         <section className="blog-listing-page-content">
