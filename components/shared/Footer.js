@@ -42,7 +42,7 @@ const Footer = () => {
                     <p> 
                         © {getCurrentYear()}{' '}
                         All rights reserved. Created by {' '}
-                        <Link href="/">
+                        <Link href="https://www.clementnduonyi.com">
                             <a>Clement Nduonyi</a>
                         </Link>{' '} with {' '}
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#bf1650" className="bi bi-heart" viewBox="0 0 16 16">

@@ -55,6 +55,7 @@
     .subsubTitle {
       @include animation-delay(3.6s);
       font-size: 18px;
+      color: #bf1650;
     }
   
     @keyframes fadein {
@@ -70,4 +71,17 @@
       color: #ffff
 
     }
+
   }
+
+  @media (max-width: 991px){
+    .about-page-layout{
+      padding-top: 3px;
+    }
+
+    .subsubTitle{
+      font-size: 20px;
+    }
+  }
+
+  
