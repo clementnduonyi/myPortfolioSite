@@ -1,6 +1,7 @@
-const { useState, useEffect } = require("react");
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import {Row, Col, Button} from 'reactstrap';
+import {isAuthorized} from '@/utils/auth0';
 import ProjectCard from "@/components/ProjectCard";
 
 

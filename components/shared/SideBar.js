@@ -1,5 +1,5 @@
 
-const { useState, useEffect } = require("react");
+import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import {Row} from 'reactstrap';
 import Link from 'next/link'
