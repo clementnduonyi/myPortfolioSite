@@ -74,7 +74,7 @@ const Home = ({blogs}) => {
 }
 
 
-/*export async function getStaticProps(req, res){
+export async function getStaticProps(req, res){
   const {data} = await new BlogApi().getAll()
   const blogs = data.map(blogPost => ({...blogPost.blog, author: blogPost.author}))
 
@@ -85,7 +85,7 @@ const Home = ({blogs}) => {
       revalidate: 1
   }
 
-} */
+} 
 
 
 export default Home;
