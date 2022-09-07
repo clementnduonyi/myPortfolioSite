@@ -45,7 +45,7 @@ const Home = ({blogs}) => {
           </Container>
         </div>
         <section className="blog-listing-page-content">
-          {/*<Row>
+          {<Row>
             {blogs.map(blog =>
               <Col 
               onClick={() => router.push('/blogs/[slug]', `blogs/${blog.slug}`)}
@@ -53,7 +53,7 @@ const Home = ({blogs}) => {
                   <BlogList blog ={blog}/>
               </Col>
             )}
-            </Row>*/}
+            </Row>}
         </section>
 
        <section className='contact-box'>
