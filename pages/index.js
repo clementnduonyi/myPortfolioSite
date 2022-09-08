@@ -7,6 +7,7 @@ import ContactForm from 'components/shared/ContactForm';
 import { createContact } from "actions/contacts";
 import BlogApi from "lib/api/blogs";
 import ProjectApi from 'lib/api/projects';
+import ProjectCard from 'components/ProjectCard';
 import BlogList from "components/shared/BlogList";
 import HeroSection from "components/HeroSection"
 import HeroWelcome from "components/HeroWelcome"
@@ -45,8 +46,14 @@ const Home = ({blogs, projects}) => {
             </Row>
           </Container>
         </div>
-        <section>
-          <WorkCard projects={projects} />
+        <section className="project-page-content">
+          {projects.map(project =>
+                <Col 
+                onClick={() => router.push('/blogs/[slug]', `blogs/${project._id}`)}
+                key={project._id} md='4' className="mb-4">
+                    <ProjectCard project ={project}/>
+                </Col>
+              )}
         </section>
         
         <section className="blog-listing-page-content">

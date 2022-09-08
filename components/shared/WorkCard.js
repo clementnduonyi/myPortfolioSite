@@ -16,8 +16,8 @@ const WorkCard = ({projects}) => {
                 key={project._id}  md={{size: 4, offset: 0}}>
                     <ProjectCard
                     project = {project} 
-                    >
-                        {dataU && isAuthorized(dataU, 'admin') &&
+                    />
+                        {/*{dataU && isAuthorized(dataU, 'admin') &&
                             <>
                                 <Button
                                 onClick={(e) => {
@@ -29,9 +29,9 @@ const WorkCard = ({projects}) => {
                                 onClick={(e) => _deleteProject(e, project._id)}
                                 color="danger">Delete</Button>
                             </>
-                        }
+                        }*/}
                         
-                    </ProjectCard>
+                  
                 </Col>
                 )
             }
