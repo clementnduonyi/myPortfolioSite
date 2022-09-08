@@ -21,6 +21,7 @@ const WorkCard = () => {
     return(
         <div className="project-page-content">
             <Row style={{width: '100%'}} className="mb-3">
+                <h3>projects I was working on recently</h3>
                 { projects.map(project =>
                     <Col 
                     onClick={() => router.push('/projects/[id]', `projects/${project._id}`)}
