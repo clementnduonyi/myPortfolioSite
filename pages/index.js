@@ -6,6 +6,7 @@ import BasePage from 'components/BasePage';
 import ContactForm from 'components/shared/ContactForm';
 import { createContact } from "actions/contacts";
 import BlogApi from "lib/api/blogs";
+import ProjectApi from 'lib/api/projects';
 import BlogList from "components/shared/BlogList";
 import HeroSection from "components/HeroSection"
 import HeroWelcome from "components/HeroWelcome"
@@ -80,12 +81,15 @@ const Home = ({blogs, projects}) => {
 
 export async function getStaticProps(req, res){
   const {data} = await new BlogApi().getAll()
-  const blogs = data.map(blogPost => ({...blogPost.blog, author: blogPost.author}))
+  const blogs =  data.map(blogPost => ({...blogPost.blog, author: blogPost.author}))
+
+  const json = await new ProjectApi().getAll()
+  const projects = json.data
 
   
  
   return{
-      props: { blogs },
+      props: { blogs, projects },
       revalidate: 1
   }
 
