@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import {Row, Col, Button} from 'reactstrap';
 import { useRouter } from 'next/router';
+import { Card, CardText, CardImg, CardImgOverlay, CardTitle } from "reactstrap";
+
 import {isAuthorized} from '@/utils/auth0';
 import ProjectCard from "@/components/ProjectCard";
 
