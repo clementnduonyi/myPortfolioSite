@@ -47,13 +47,17 @@ const Home = ({blogs, projects}) => {
           </Container>
         </div>
         <section className="project-page-content">
-          {projects.map(project =>
-                <Col 
-                onClick={() => router.push('/blogs/[slug]', `blogs/${project._id}`)}
-                key={project._id} md='4' className="mb-4">
-                    <ProjectCard project ={project}/>
-                </Col>
-              )}
+          {
+            <Row>
+              {projects.map(project =>
+                  <Col 
+                  onClick={() => router.push('/blogs/[slug]', `blogs/${project._id}`)}
+                  key={project._id} md='4' className="mb-4">
+                      <ProjectCard project ={project}/>
+                  </Col>
+                )}
+            </Row>
+          }
         </section>
         
         <section className="blog-listing-page-content">
