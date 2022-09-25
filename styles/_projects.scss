@@ -1,21 +1,20 @@
 .project-page{
     min-height: 100vh;
-    padding: 150px 0 0;
+    margin: auto;
+   
     //background-color: white;
 
     &-content{
-        top: 150px;
-        left: 0;
-        right: 0;
         width: 100%;
-        padding: 120px 0 150px 0 ;
+        padding: 120px 0 150px 0;
       }
+
 
 
     .project-card{
         //background-color: linear-gradient(45deg, #4e54c8 0%, #8f94fb);
         border: none;
-        color: #bf1650;
+        color: #fff;
         transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1) 0s;
         //margin-bottom: 20px;
 
@@ -32,7 +31,7 @@
         &-header{
             padding: 3px;
             padding-right: 7px;
-            text-align: right;
+            //text-align: center;
             text-transform: uppercase;
             font-weight: 600;
             font-size: 17px;

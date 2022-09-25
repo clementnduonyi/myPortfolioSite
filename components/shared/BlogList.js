@@ -5,10 +5,8 @@ import { Card, CardTitle, CardSubtitle, CardText, CardBody, CardImg } from "reac
 
 const BlogList = ({blog}) => 
     <Card 
-    style={
-        {height: "350px", 
-        backgroundColor: "#0e101c",
-        borderTop: "2px #fb1650 solid"}}>
+    style={{height: "350px", 
+            backgroundColor: "#0e101c"}}>
         <CardBody className="post-preview">
             <Link href="/blogs/[slug]" as={`/blogs/${blog.slug}`}>
                 <a>

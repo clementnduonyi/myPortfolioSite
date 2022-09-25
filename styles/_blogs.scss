@@ -12,9 +12,7 @@
   background-color: #ecedee;
 
   &-content{
-    top: 150px;
-    left: 0;
-    right: 0;
+  
     width: 100%;
     padding: 120px 0 150px 0 ;
   }
@@ -239,6 +237,15 @@
     line-height: 15px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
+
+}
+
+.card-border-orange{
+  border-top: 2px #bf1650;
+}
+
+.card-border-white{
+  border-top: 2px #fff;
 
 }
 

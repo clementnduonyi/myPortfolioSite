@@ -5,7 +5,7 @@ import BasePage from "@/components/BasePage";
 import { useRouter } from "next/router";
 import { useDeleteProject } from '@/actions/projects'
 import ProjectApi from "@/lib/api/projects";
-import { Row, Col, Button } from "reactstrap";
+import { Row, Col, Button, Container } from "reactstrap";
 import ProjectCard from "@/components/ProjectCard";
 import {isAuthorized} from '@/utils/auth0';
 
@@ -41,34 +41,37 @@ const Projects = ({projects: initialProjects}) => {
              title="Projects"
            >
                 <div className="project-page-content">
-                    <Row style={{width: '100%'}} className="mb-3">
-                        { projects.map(project =>
-                            <Col 
-                            onClick={() => router.push('/projects/[id]', `projects/${project._id}`)}
-                            key={project._id}  md={{size: 4, offset: 0}}>
-                                <ProjectCard
-                                project = {project} 
-                                >
-                                    {dataU && isAuthorized(dataU, 'admin') &&
-                                        <>
-                                            <Button
-                                            onClick={(e) => {
-                                                e.stopPropagation()
-                                                router.push('/projects/[id]/edit', `projects/${project._id}/edit`)
-                                            }}
-                                            className="me-2" color="warning">Edit</Button>
-                                            <Button
-                                            onClick={(e) => _deleteProject(e, project._id)}
-                                            color="danger">Delete</Button>
-                                        </>
-                                    }
-                                    
-                                </ProjectCard>
-                            </Col>
-                            )
-                        }
-                    
-                    </Row>    
+                    <Container fluid>
+                        <Row className="project-page-row mb-3">
+                            {projects && projects.map(project =>
+                                <Col 
+                                onClick={() => router.push('/projects/[id]', `projects/${project._id}`)}
+                                key={project._id}  md={{size: 4}} className="col">
+                                    <ProjectCard
+                                    project = {project} 
+                                    >
+                                        {dataU && isAuthorized(dataU, 'admin') &&
+                                            <>
+                                                <Button
+                                                onClick={(e) => {
+                                                    e.stopPropagation()
+                                                    router.push('/projects/[id]/edit', `projects/${project._id}/edit`)
+                                                }}
+                                                className="me-2" color="warning">Edit</Button>
+                                                <Button
+                                                onClick={(e) => _deleteProject(e, project._id)}
+                                                color="danger">Delete</Button>
+                                            </>
+                                        }
+                                        
+                                    </ProjectCard>
+                                </Col>
+                                )
+                            }
+                        
+                        </Row>    
+                    </Container>
+                   
                 </div>
                          
             </BasePage>

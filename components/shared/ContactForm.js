@@ -7,7 +7,7 @@ const ContactForm = ({onSubmit, title, className}) => {
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="contact-form sideBar-contact-form">
             <div>
-                {title ? <h5 className={className}>{title}</h5> : null}
+                {title ? <h2 className={className}>{title}</h2> : null}
                 <div className="form-group">
                     <label hidden htmlFor="subject">Subject</label>
                     <input

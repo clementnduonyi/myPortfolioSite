@@ -11,7 +11,7 @@ import ProjectCard from 'components/ProjectCard';
 import BlogList from "components/shared/BlogList";
 import HeroSection from "components/HeroSection"
 import HeroWelcome from "components/HeroWelcome"
-import WorkCard from "components/shared/WorkCard"
+import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 const TomMap = dynamic(() => import("components/shared/map/tomMap"), {
     ssr: false
@@ -21,6 +21,7 @@ const TomMap = dynamic(() => import("components/shared/map/tomMap"), {
 const Home = ({blogs, projects}) => {
   const [isFlipping, setIsFlipping] = useState(false);
   const { data, loading } = useGetUser();
+  const router = useRouter()
 
 
   return (
@@ -30,7 +31,7 @@ const Home = ({blogs, projects}) => {
       user={data}
       loading={loading}
       className={`cover ${isFlipping ? "cover-orange" : "cover-blue"}`}>
-      <BasePage title="Home" indexPage >
+      <BasePage title="Home" indexPage className="project-page blog-page">
         <div className="main-section ">
           <div className="background-image">
             <img src="/images/background-index.png" alt='background image' />
@@ -46,21 +47,24 @@ const Home = ({blogs, projects}) => {
             </Row>
           </Container>
         </div>
-        <section className="project-page-content">
-          {
-            <Row>
-              {projects.map(project =>
+        
+        <section className="project-page-indexcontent">
+          <h2>My most recent work</h2>
+          <Row className="mb-3 project-page-row">
+              {projects && projects.map(project =>
                   <Col 
                   onClick={() => router.push('/projects/[id]', `projects/${project._id}`)}
-                  key={project._id} md='4' className="mb-4">
-                      <ProjectCard project ={project}/>
+                  key={project._id}  md={{size: 4}}>
+                      <ProjectCard project = {project} ></ProjectCard>
                   </Col>
-                )}
-            </Row>
-          }
+                  )
+              }
+          
+          </Row>    
         </section>
         
-        <section className="blog-listing-page-content">
+        <section className="blog-listing-page-content blog-page-indexcontent">
+          <h2>Latest blogs</h2>
           {<Row>
             {blogs.map(blog =>
               <Col 
@@ -73,15 +77,15 @@ const Home = ({blogs, projects}) => {
         </section>
 
        <section className='contact-box'>
-          <Row className='pe-0 me-0'>
+          <Row>
             <Col xs={{span: 12, order: 1}} md="4" className='me-0 pe-0'>
-              <ContactForm onSubmit={createContact} title="Get in touch with me" className="contact-title" />
+              <ContactForm onSubmit={createContact} title="Get in touch with me" className="contact-box-title" />
             </Col>
-            <Col xs={{span: 12, order: 2}} md="8" className='tom-map me-0 pe-0'>
+            <Col xs={{span: 12, order: 2}} md="8" className='contact-box-tommap'>
                 <TomMap />
             </Col>
           </Row>
-      </section>
+        </section>
 
       </BasePage>
      

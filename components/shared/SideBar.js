@@ -25,25 +25,22 @@ const SideBar = () => {
     return(
         <div className="sideBar">
              <h2>Categories</h2>
-            <Row className="post-layout-row">
-                {categories.map(category =>
-                    <ul key={category._id}>
-                      <li>
-                            <Link href='/categories/[slug]' as={`/categories/${category.slug}`}>
-                                <a>{category.name}</a>
-                            </Link>
-                        </li> 
-                    </ul>
-                    )
-                }
-                <div>
-                    <ContactForm 
-                    onSubmit={createContact} 
-                    title="Contact Me" 
-                    className="sideBar-contact-form-title sideBar-contact-form"/>
-                </div>
-                
-            </Row>
+            {categories.map(category =>
+                <ul key={category._id}>
+                    <li>
+                        <Link href='/categories/[slug]' as={`/categories/${category.slug}`}>
+                            <a>{category.name}</a>
+                        </Link>
+                    </li> 
+                </ul>
+                )
+            }
+            <div className='contact-form'>
+                <ContactForm 
+                onSubmit={createContact} 
+                title="Contact Me" 
+                className="sideBar-contact-form-title sideBar-contact-form"/>
+            </div>
         </div>
     )
 }

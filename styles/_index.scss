@@ -220,6 +220,40 @@
 
 }
 
+
+.project-page{
+  &-indexcontent{
+    width: 100%;
+    //padding: 120px 0
+
+    h2{
+      color: #bf1650;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+.blog-page{
+  &-indexcontent{
+    h2{
+      color: #bf1650;
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+
+.contact-box{
+  &-title{
+    color: #bf1650;
+  }
+  &-tommap{
+    margin-top: 5rem;
+ }
+}
+
 @media (max-width: 991px) {
   .hero-section {
     width: 341px;
@@ -234,7 +268,7 @@
     margin-top: 0px;
   }
 
-  .tom-map{
+ .tom-map{
     width: 100vw;
     padding-left: 0px;
     padding-right: 0px;
@@ -244,6 +278,7 @@
 
   .contact-box{
     margin-bottom: 3rem !important;
+    
   }
 }
 
@@ -273,18 +308,7 @@
   box-shadow: -17px 13px 41px rgba(13,78,158,0.3);
 }
 
-.contact-box{
-  left: 0;
-  right: 0;
-  //position: absolute;
-}
 
 
 
-/*.ms-0{
-  position: absolute;
-  left: 0px !important;
-  right: 0px !important;
-  margin: 0px !important;
-}*/
 

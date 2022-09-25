@@ -1,11 +1,11 @@
 //Variables
 $fontSize: .4em;
 
-
 //Prject details styling
 .project-detail {
     height: 100%;
-    
+   
+   
     header{
       font-size: .7em;
     }
@@ -13,6 +13,22 @@ $fontSize: .4em;
     &-card{
       width: 50%;
       background: inherit;
+      border: none;
+      color: #bf1650;
+
+      transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1) 0s;
+      //margin-bottom: 20px;
+  
+      &:hover{
+          cursor: pointer;
+          transform: translate(-5px);
+      }
+      &:hover{
+          readMore:before{
+              background: linear-gradient(to right, #ffffff 0%, #ffffff 1%);
+          }
+      }
+      
     }
     .cover-container {
       max-width: 42em;
