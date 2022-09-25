@@ -31,9 +31,9 @@ const Contact = ({user, loading}) => {
                                 frontend, backend and developer advocate roles.
                             </p>
                             <p>
-                                Have you a business and seeking a web presence or you are an employer/recruiter looking to hire? Don&apos;t hesitate to use the form below to get in touch with me with your interest as the subject and I will be availabe to discuss further.
-                                
+                                Have you a business and seeking a web presence or you are an employer/recruiter looking to hire?
                             </p>
+                            <p>Use the form below, to get in touch with me about your interest and I will be availabe to discuss further.</p>
                 
                             <ContactForm 
                             onSubmit={createContact} 
