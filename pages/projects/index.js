@@ -46,7 +46,7 @@ const Projects = ({projects: initialProjects}) => {
                             {projects && projects.map(project =>
                                 <Col 
                                 onClick={() => router.push('/projects/[id]', `projects/${project._id}`)}
-                                key={project._id}  md={{size: 4}} className="col">
+                                key={project._id}  md={{size: 4}}>
                                     <ProjectCard
                                     project = {project} 
                                     >
