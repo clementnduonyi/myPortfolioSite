@@ -2,7 +2,6 @@ import React from 'react';
 import { Container } from "reactstrap";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Footer from 'components/shared/Footer'
 
 
 const BasePage = props => {
@@ -14,7 +13,7 @@ const BasePage = props => {
      header, 
      className = "", 
      title = 'Graymatterverse creator | Portfolio',
-     metaDescription="My name is Clement Nduonyi, an experienced web developer and tech freelancer. I have applied knowledge of some cutting edge web development technologies including Javascript, Ruby, Nodejs, Ruby-on-rails, Reactjs, Nextjs, Html5, CSS3, Bootstrap, Bulma ", 
+     metaDescription="Clement Nduonyi, an experienced web developer and tech freelancer. I have applied knowledge of some cutting edge web development technologies including Javascript, Ruby, Nodejs, Ruby-on-rails, Reactjs, Nextjs, Html5, CSS3, Bootstrap, Bulma ", 
      canonicalPath } = props;
 
      const pageType = indexPage ? 'index-page' : 'base-page'
