@@ -64,8 +64,8 @@ const BlogDetails = ({blog, author, blogs}) => {
                         <Col md="3" className="post-layout-sidebar">
                             <SideBar />
                         </Col>
-
-                        <Row className="global-margin">
+                        
+                        <Row>
                             <Col>
                                 <h2>Related Posts</h2>
                                 {blogs.map(rBlog =>

@@ -215,7 +215,7 @@
  
 
   &-sidebar{
-    margin-top: 115px;
+    margin-top: 120px;
   }
 
   header{
@@ -258,8 +258,12 @@
 }
 
 
-.category-detail{
-  padding-top: 130px;
-
- 
+@media (max-width: 991px){
+  .post-layout{
+   
+    &-sidebar{
+      margin-bottom: 120px;
+    }
+  }
+  
 }
