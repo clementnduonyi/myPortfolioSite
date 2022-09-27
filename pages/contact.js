@@ -24,7 +24,7 @@ const Contact = ({user, loading}) => {
                 <div className="contact-form-layout">
                 <Container>
                     <Row >
-                        <Col className="mt-5 contact-form-layout-content">
+                        <Col xs={{span: 12, order: 1}} md="4" className="mt-5 contact-form-layout-content">
                             <p>
                                 I&apos;m open to job as web developer and
                                 interested in remote, on-premise and freelance opportunities in 
@@ -33,7 +33,9 @@ const Contact = ({user, loading}) => {
                             <p>
                                 Have you a business and seeking a web presence or you are an employer/recruiter looking to hire?
                             </p>
-                            <p>Use the form below, to get in touch with me about your interest and I will be availabe to discuss further.</p>
+                            <p>
+                                Use the form below, to get in touch with me about your interest and I will be availabe to discuss further.
+                            </p>
                 
                             <ContactForm 
                             onSubmit={createContact} 
@@ -41,10 +43,11 @@ const Contact = ({user, loading}) => {
                             title="Get in touch with me"
                         />
                         </Col>
-                        <Col>
+                        <Col xs={{span: 12, order: 2}} md="8" className='contact-box-tommap'>
                             <TomMap />
                         </Col>
                     </Row>
+                       
                 </Container>
                 </div>
             </BasePage>
