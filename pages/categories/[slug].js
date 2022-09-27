@@ -25,23 +25,21 @@ const Category = ({category, blogs, author }) => {
     title = {`Category | ${category.name}`}
     >
       <div className="blog-listing-page-content">
-        <Row className="mb-5"> 
-          <Col xs={{span: 12, order: 2}} md={{span: 3, order: 1}}>
-            <SideBar />
-          </Col>       
-          <Col xs={{span: 12, order: 1}} md={{span: 9, order: 2}}>
-            <Row>
-              <h3>Category: {category.name}</h3>
-                {blogs.map(blog =>
-                  <Col key={blog._id} md='4'className="mb-4 post-layout-row">
-                    <BlogList blog={blog} author={author}/>
-                  </Col>
-                  )
-                }  
-            </Row>
-          </Col>
-          
+        <Row>
+          <h3>Category: { category.name }</h3>
+            {blogs.map(blog =>
+              <Col key={blog._id} md='4'className="mb-4 post-layout-row">
+                <BlogList blog={blog} author={author}/>
+              </Col>
+              )
+            }  
         </Row>
+        
+        <Row className="mb-5"> 
+          <Col md='3'>
+            <SideBar />
+          </Col>
+        </Row>      
       </div>
       </BasePage>
           

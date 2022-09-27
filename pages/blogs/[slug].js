@@ -28,10 +28,7 @@ const BlogDetails = ({blog, author, blogs}) => {
                     <Row>
                         <Col md="9">
                             <Avatar 
-                            title= { <Link href="https://clementnduonyi.com">
-                                    <a>{author.name}</a>
-                                    </Link>
-                                    }
+                            title= {author.name}
                             image={author.picture}
                             date={blog.createdAt}
                             />
