@@ -34,8 +34,8 @@ const Category = ({category, blogs, author }) => {
               )
             }  
         </Row>
-        
-        <Row className="mb-5"> 
+
+        <Row className="mb-4"> 
           <Col md='3'>
             <SideBar />
           </Col>
