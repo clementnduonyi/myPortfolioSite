@@ -38,7 +38,7 @@ const Blog = ({blogs, categories}) => {
                                 )}
                             </Row>
                         </Col>
-                        <Col xs={{order: 2}} md='3' className="pe-0">
+                        <Col xs={{order: 2}} md='3'>
                             <SideBar categories={categories} />
                         </Col>
                     </Row>
