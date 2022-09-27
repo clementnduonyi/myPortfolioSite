@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import BaseLayout from '@/components/layouts/BaseLayout';
 import { Container, Row, Col } from 'reactstrap';
 import { useGetUser } from '@/actions/user';
@@ -66,7 +66,7 @@ const Home = ({blogs, projects}) => {
               
         </section>
         
-        <section className="blog-listing-page-content blog-page-indexcontent">
+        <section className="blog-listing-page-content blog-page-indexcontent" fluid={true}>
           <h2>Latest blogs</h2>
           <Row>
             {blogs.map(blog =>
@@ -81,7 +81,7 @@ const Home = ({blogs, projects}) => {
 
        <section className='contact-box'>
           <Row>
-            <Col xs={{span: 12, order: 1}} md="4" className='me-0 pe-0'>
+            <Col xs={{span: 12, order: 1}} md="4">
               <ContactForm onSubmit={createContact} title="Get in touch with me" className="contact-box-title" />
             </Col>
             <Col xs={{span: 12, order: 2}} md="8" className='contact-box-tommap'>
