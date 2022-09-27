@@ -28,7 +28,10 @@ const BlogDetails = ({blog, author, blogs}) => {
                     <Row>
                         <Col md="9">
                             <Avatar 
-                            title={author.name}
+                            title= { <Link href="https://clementnduonyi.com">
+                                    <a>{author.name}</a>
+                                    </Link>
+                                    }
                             image={author.picture}
                             date={blog.createdAt}
                             />
@@ -36,7 +39,7 @@ const BlogDetails = ({blog, author, blogs}) => {
                             <Link href="/blogs">
                                 Back to blogs
                             </Link>
-                            <div style={{  backgroundImage: 'linear-gradient(45deg, #081229 0%, #0e101c 100%)' }} className="mt-3 mb-3">
+                            <div style={{ backgroundImage: 'linear-gradient(45deg, #081229 0%, #0e101c 100%)' }} className="mt-3 mb-3">
                                 <header>
                                     <h1>{blog.title}</h1>
                                 </header>
