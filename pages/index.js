@@ -32,7 +32,7 @@ const Home = ({blogs, projects}) => {
       loading={loading}
       className={`cover ${isFlipping ? "cover-orange" : "cover-blue"}`}>
       <BasePage title="Home" indexPage className="project-page blog-page">
-        <div className="main-section  container-fluid ">
+        <div className="main-section">
           <div className="background-image">
             <img src="/images/background-index.png" alt='background image' />
           </div>
@@ -50,22 +50,25 @@ const Home = ({blogs, projects}) => {
         
         <section className="project-page-indexcontent">
           <h2>My most recent work</h2>
-          <Row className="mb-3 project-page-row">
-              {projects && projects.map(project =>
-                  <Col 
-                  onClick={() => router.push('/projects/[id]', `projects/${project._id}`)}
-                  key={project._id}  md={{size: 4}}>
-                      <ProjectCard project = {project} ></ProjectCard>
-                  </Col>
-                  )
-              }
-          
-          </Row>    
+          <Container fluid={true}>
+            <Row className="mb-3 project-page-row">
+                {projects && projects.map(project =>
+                    <Col 
+                    onClick={() => router.push('/projects/[id]', `projects/${project._id}`)}
+                    key={project._id}  md={{size: 4}}>
+                        <ProjectCard project = {project} ></ProjectCard>
+                    </Col>
+                    )
+                }
+            
+            </Row>
+          </Container>
+              
         </section>
         
         <section className="blog-listing-page-content blog-page-indexcontent">
           <h2>Latest blogs</h2>
-          {<Row>
+          <Row>
             {blogs.map(blog =>
               <Col 
               onClick={() => router.push('/blogs/[slug]', `blogs/${blog.slug}`)}
@@ -73,7 +76,7 @@ const Home = ({blogs, projects}) => {
                   <BlogList blog ={blog}/>
               </Col>
             )}
-            </Row>}
+            </Row>
         </section>
 
        <section className='contact-box'>
