@@ -24,7 +24,7 @@ const Blog = ({blogs, categories}) => {
             <BasePage
                 title = "Posts"
                 indexPage>
-                <div className="blog-listing-page-content">
+                <div className="blog-listing-page-content container-fluid">
                     <Row className="mb-5">
                         
                         <Col xs={{span: 12, order: 1}} md='9'>
@@ -38,7 +38,7 @@ const Blog = ({blogs, categories}) => {
                                 )}
                             </Row>
                         </Col>
-                        <Col xs={{order: 2}} md='3'>
+                        <Col xs={{order: 2}} md='3' className="pe-0">
                             <SideBar categories={categories} />
                         </Col>
                     </Row>

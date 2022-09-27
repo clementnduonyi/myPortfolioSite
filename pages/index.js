@@ -32,7 +32,7 @@ const Home = ({blogs, projects}) => {
       loading={loading}
       className={`cover ${isFlipping ? "cover-orange" : "cover-blue"}`}>
       <BasePage title="Home" indexPage className="project-page blog-page">
-        <div className="main-section ">
+        <div className="main-section  container-fluid ">
           <div className="background-image">
             <img src="/images/background-index.png" alt='background image' />
           </div>

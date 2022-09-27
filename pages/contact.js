@@ -21,8 +21,8 @@ const Contact = ({user, loading}) => {
         loading = {loading}
         navClass="transparent">
             <BasePage indexPage>
-                <div className="contact-form-layout">
-                <Container>
+                <div className="contact-form-layout container-fluid">
+              
                     <Row >
                         <Col xs={{span: 12, order: 1}} md="4" className="mt-5 contact-form-layout-content">
                             <p>
@@ -43,12 +43,12 @@ const Contact = ({user, loading}) => {
                             title="Get in touch with me"
                         />
                         </Col>
-                        <Col xs={{span: 12, order: 2}} md="8" className='contact-box-tommap'>
+                        <Col xs={{span: 12, order: 2}} md="8" className='contact-box-tommap pe-0'>
                             <TomMap />
                         </Col>
                     </Row>
                        
-                </Container>
+              
                 </div>
             </BasePage>
        </BaseLayout>
