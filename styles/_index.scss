@@ -226,20 +226,32 @@
     width: 100%;
     //padding: 120px 0
 
-    h2{
+    h1{
       color: #bf1650;
       text-align: center;
       margin-bottom: 4rem;
     }
+    
   }
 }
 
 .blog-page{
   &-indexcontent{
+    h1{
+      text-align: center;
+      color: #bf1650;
+      margin-bottom: 4rem;
+    }
     h2{
       color: #bf1650;
-      text-align: center;
-      margin-bottom: 4rem;
+      
+    }
+    a{
+      text-decoration: none;
+    }
+    a:hover{
+      text-decoration: underline;
+      color: #bf1650
     }
   }
 }

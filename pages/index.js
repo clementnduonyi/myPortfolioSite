@@ -49,13 +49,13 @@ const Home = ({blogs, projects}) => {
         </div>
         
         <section className="project-page-indexcontent">
-          <h2>My most recent work</h2>
+          <h1>Recent work</h1>
           <Container fluid={true}>
             <Row className="mb-3 project-page-row">
                 {projects && projects.map(project =>
                     <Col 
                     onClick={() => router.push('/projects/[id]', `projects/${project._id}`)}
-                    key={project._id}  md={{size: 4}}>
+                    key={project._id}  md={{size: 3}}>
                         <ProjectCard project = {project} ></ProjectCard>
                     </Col>
                     )
@@ -66,13 +66,13 @@ const Home = ({blogs, projects}) => {
               
         </section>
         
-        <section className="blog-listing-page-content blog-page-indexcontent" fluid={true}>
-          <h2>Latest blogs</h2>
+        <section className="blog-listing-page-content blog-page-indexcontent">
+          <h1>Latest blogs</h1>
           <Row>
             {blogs.map(blog =>
               <Col 
               onClick={() => router.push('/blogs/[slug]', `blogs/${blog.slug}`)}
-              key={blog._id} md='4' className="mb-4">
+              key={blog._id} md='3' className="mb-4">
                   <BlogList blog ={blog}/>
               </Col>
             )}

@@ -10,13 +10,13 @@ const BlogList = ({blog}) =>
         <CardBody className="post-preview">
             <Link href="/blogs/[slug]" as={`/blogs/${blog.slug}`}>
                 <a>
-                    <CardTitle className="post-title" tag="h5" style={{color: "#bf1650"}}>
-                        {blog.title.substr(0, 27)}
+                    <CardTitle className="post-title" tag="h2" style={{color: "#bf1650"}}>
+                        {blog.title.substr(0, 25)}
                     </CardTitle>
-                    <CardSubtitle className="mb-2 text-muted" tag="h6">
+                    <CardSubtitle className="mb-2" style={{color: "#fff"}} tag="h5">
                         {`${blog.subTitle.substr(0, 75)}...`}
                     </CardSubtitle>
-                    <CardImg className="mb-2 text-muted" tag="h6">
+                    <CardImg className="mb-2" tag="h5">
                         <img 
                         src={blog.image.url} 
                         alt= {`${blog.title.substr(0, 20)}...`}
@@ -24,9 +24,9 @@ const BlogList = ({blog}) =>
                     </CardImg>
                 </a>
             </Link>
-            <p className="post-meta"><small>Written by
-            <a className="post-meta text-muted" href="#" > { blog.author.name } </a></small>
-            -<small> {new Date(blog.createdAt).toDateString()}</small>
+            <p className="post-meta"><small style={{color: "#fff"}}>Written by
+            <a className="post-meta text-muted" href="#" > { blog.author.name } </a></small> <br />
+            <small style={{color: "#fff"}}> {new Date(blog.createdAt).toDateString()}</small>
             </p>
         </CardBody>
     </Card>
