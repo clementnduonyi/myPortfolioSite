@@ -25,7 +25,7 @@ const HeroSection = () => {
                 <div className="front">
                     <div className="image image-1">
                         <div className="hero-section-content">
-                            <h2> Full <span className='bio-statck'>Stack</span> Web Developer </h2>
+                        <h2 className='bio-statck'>Web Developer</h2>
                             <div className="hero-section-content-intro">
                             <Link href="/projects"className='position-absolute home-page-pj-link'>
                                 Have a look at my portfolio and job history.
@@ -40,7 +40,7 @@ const HeroSection = () => {
                 <div className="back">
                     <div className="image image-2">
                         <div className="hero-section-content">
-                            <h2> Full <span className='bio-statck'>Stack</span> Web Developer </h2>
+                            <h2 className='bio-statck'>Web Developer</h2>
                             <div className="hero-section-content-intro">
                                 <Link href="/projects"className='position-absolute home-page-pj-link'>
                                     Have a look at my portfolio and job history.

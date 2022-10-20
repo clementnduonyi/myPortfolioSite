@@ -6,11 +6,11 @@ import { Card, CardTitle, CardSubtitle, CardText, CardBody, CardImg } from "reac
 const BlogList = ({blog}) => 
     <Card 
     style={{height: "350px", 
-            backgroundColor: "#0e101c"}}>
+            backgroundColor: "#0e101c"}} data-aos="fade-up">
         <CardBody className="post-preview">
             <Link href="/blogs/[slug]" as={`/blogs/${blog.slug}`}>
                 <a>
-                    <CardTitle className="post-title" tag="h2" style={{color: "#bf1650"}}>
+                    <CardTitle className="post-title" tag="h3" style={{color: "#bf1650"}}>
                         {blog.title.substr(0, 25)}
                     </CardTitle>
                     <CardSubtitle className="mb-2" style={{color: "#fff"}} tag="h5">

@@ -226,10 +226,14 @@
     width: 100%;
     //padding: 120px 0
 
-    h1{
+    h2{
       color: #bf1650;
       text-align: center;
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
+    }
+
+    h3{
+      color: #bf1650;
     }
     
   }
@@ -237,15 +241,15 @@
 
 .blog-page{
   &-indexcontent{
-    h1{
+    h2{
       text-align: center;
       color: #bf1650;
-      margin-bottom: 4rem;
+      margin-bottom: 3rem;
     }
-    h2{
+    h3{
       color: #bf1650;
-      
     }
+   
     a{
       text-decoration: none;
     }

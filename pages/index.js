@@ -49,7 +49,7 @@ const Home = ({blogs, projects}) => {
         </div>
         
         <section className="project-page-indexcontent">
-          <h1>Recent work</h1>
+          <h2 data-aos="fade-left" data-aos-duration="1000">Recent work</h2>
           <Container fluid={true}>
             <Row className="mb-3 project-page-row">
                 {projects && projects.map(project =>
@@ -67,7 +67,7 @@ const Home = ({blogs, projects}) => {
         </section>
         
         <section className="blog-listing-page-content blog-page-indexcontent">
-          <h1>Latest blogs</h1>
+          <h2 data-aos="fade-left" data-aos-duration="1000">Latest blogs</h2>
           <Row>
             {blogs.map(blog =>
               <Col 

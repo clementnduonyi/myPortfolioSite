@@ -5,7 +5,7 @@ const ProjectCard = ({project, children}) => {
    
     return(
         <div>
-            <Card  style={{width: '100%', height: '200px'}} className="project-card mb-3">
+            <Card  style={{width: '100%', height: '200px'}} className="project-card mb-3" data-aos="flip-right">
                 <CardImg
                 alt={`${project.title.substr(0, 20)}...`}
                 src={project.image.url} 
