@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Link from "next/link";
 import BaseLayout from '@/components/layouts/BaseLayout';
 import { Container, Row, Col } from 'reactstrap';
 import { useGetUser } from '@/actions/user';
@@ -49,26 +50,39 @@ const Home = ({blogs, projects}) => {
         </div>
         
         <section className="project-page-indexcontent">
-          <h2 data-aos="fade-left" data-aos-duration="1000">Recent work</h2>
-          <Container fluid={true}>
-            <Row className="mb-3 project-page-row">
-                {projects && projects.map(project =>
-                    <Col 
-                    onClick={() => router.push('/projects/[id]', `projects/${project._id}`)}
-                    key={project._id}  md={{size: 3}}>
-                        <ProjectCard project = {project} ></ProjectCard>
-                    </Col>
-                    )
-                }
-            
+          <div className='fake-bg' data-aos="fade-left" data-aos-duration="1000">Work</div>
+          <div className='section-intro'>
+            <header>
+              <h2>My Portfolio</h2>
+            </header>
+            <p>
+              A gallery of selected projects I recently worked on with my team and I, <br />
+              where I demonstrates good understanding of some cutting edge web technologies.
+            </p>
+          </div>
+          <div>
+            <Row className="mb-3 project-page-idxrow">
+              {projects && projects.map(project =>
+                  <Col 
+                  onClick={() => router.push('/projects/[id]', `projects/${project._id}`)}
+                  key={project._id}  md={{size: 4}}>
+                      <ProjectCard project = {project} ></ProjectCard>
+                  </Col>
+                  )
+              }
+              <div className="hero-welcome-bio position-relative mb-6">
+                <Link href="/projects"className='position-absolute home-page-pj-link'>
+                  Explore more projects
+                </Link>
+                <span> &rarr;</span>
+              </div>
             </Row>
-          </Container>
-              
+          </div> 
         </section>
-        
+       
         <section className="blog-listing-page-content blog-page-indexcontent">
-          <h2 data-aos="fade-left" data-aos-duration="1000">Latest blogs</h2>
-          <Row>
+          <div className='fake-bg' data-aos="fade-right" data-aos-duration="1000">Blog</div>
+          <Row className='blog-page-idxrow'>
             {blogs.map(blog =>
               <Col 
               onClick={() => router.push('/blogs/[slug]', `blogs/${blog.slug}`)}
@@ -76,7 +90,13 @@ const Home = ({blogs, projects}) => {
                   <BlogList blog ={blog}/>
               </Col>
             )}
-            </Row>
+            <div className="hero-welcome-bio position-relative">
+                <Link href="/blogs"className='position-absolute home-page-pj-link'>
+                  Read more blog
+                </Link>
+                <span> &rarr;</span>
+              </div>
+          </Row>
         </section>
 
        <section className='contact-box'>
@@ -84,9 +104,9 @@ const Home = ({blogs, projects}) => {
             <Col xs={{span: 12, order: 1}} md="4">
               <ContactForm onSubmit={createContact} title="Get in touch with me" className="contact-box-title" />
             </Col>
-            <Col xs={{span: 12, order: 2}} md="8" className='contact-box-tommap'>
+            {/*<Col xs={{span: 12, order: 2}} md="8" className='contact-box-tommap'>
                 <TomMap />
-            </Col>
+            </Col>*/}
           </Row>
         </section>
 

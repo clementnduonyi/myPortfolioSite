@@ -44,6 +44,7 @@ const Projects = ({projects: initialProjects}) => {
                     <Container fluid>
                         <Row className="project-page-row mb-3">
                             {projects && projects.map(project =>
+                                
                                 <Col 
                                 onClick={() => router.push('/projects/[id]', `projects/${project._id}`)}
                                 key={project._id}  md={{size: 4}}>

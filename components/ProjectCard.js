@@ -5,7 +5,9 @@ const ProjectCard = ({project, children}) => {
    
     return(
         <div>
-            <Card  style={{width: '100%', height: '200px'}} className="project-card mb-3" data-aos="flip-right">
+           
+            <Card style={{width: '100%', height: '200px'}} className="project-card mb-3" data-aos="flip-right">
+            <div className="overlay"></div>
                 <CardImg
                 alt={`${project.title.substr(0, 20)}...`}
                 src={project.image.url} 
@@ -19,7 +21,7 @@ const ProjectCard = ({project, children}) => {
                 { project.title }
                 </CardTitle>
                 <CardText>
-                    <small className="text-muted project-card-description">
+                    <small className="project-card-description">
                     { project.description.substr(0, 80)} <br />Read more...
                     </small>
                 </CardText>

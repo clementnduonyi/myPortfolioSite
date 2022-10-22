@@ -48,7 +48,7 @@ const HeroWelcome = () => {
         </div>
         
         <div className="hero-welcome-bio position-relative">
-            <Link href="/projects"className='position-absolute home-page-pj-link'>
+            <Link href="/projects"className='home-page-pj-link'>
             Look at my works here
             </Link>
             <span> &rarr;</span>

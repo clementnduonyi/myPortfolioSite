@@ -25,7 +25,7 @@ const BlogList = ({blog}) =>
                 </a>
             </Link>
             <p className="post-meta"><small style={{color: "#fff"}}>Written by
-            <a className="post-meta text-muted" href="#" > { blog.author.name } </a></small> <br />
+            <a className="post-meta" href="#" style={{color: "#bf1650"}}> { blog.author.name } </a></small> <br />
             <small style={{color: "#fff"}}> {new Date(blog.createdAt).toDateString()}</small>
             </p>
         </CardBody>

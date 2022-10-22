@@ -131,7 +131,7 @@
     bottom: 0;
     width: 100%;
     padding: 20px;
-    z-index: 1;
+    //z-index: 1;
 
     &-intro {
       font-size: 17px;
@@ -224,28 +224,52 @@
 .project-page{
   &-indexcontent{
     width: 100%;
-    //padding: 120px 0
 
-    h2{
-      color: #bf1650;
-      text-align: center;
-      margin-bottom: 3rem;
+    .fake-bg{
+      position: absolute;
+      font-size: 22rem;
+      font-weight: 900;
+      top: 40rem;
+      left: 25vw;
+      //z-index: 1;
+      color: rgba(255,255,255,0.04);
     }
 
     h3{
       color: #bf1650;
     }
     
+    
+  }
+  &-idxrow{
+    margin-top: 3rem;
+  }
+  .section-intro{
+    header{
+      h2{
+        color: #bf1650;
+      }
+    }
+    p{
+      color: #ffff;
+    }
   }
 }
 
 .blog-page{
   &-indexcontent{
-    h2{
-      text-align: center;
-      color: #bf1650;
-      margin-bottom: 3rem;
+    width: 100%;
+    .fake-bg{
+      position: absolute;
+      margin-top: 20px;
+      font-size: 22rem;
+      font-weight: 900;
+      top: 90rem;
+      left: -10vw;
+      //z-index: 1;
+      color: rgba(255,255,255,0.04);
     }
+   
     h3{
       color: #bf1650;
     }
@@ -258,6 +282,11 @@
       color: #bf1650
     }
   }
+
+ &-idxrow{
+    margin-top: 10rem;
+  }
+
 }
 
 
@@ -282,6 +311,21 @@
 
   .hero-welcome-text > h1 {
     margin-top: 0px;
+  }
+
+  .project-page{
+    &-indexcontent{
+  
+      .fake-bg{
+        position: absolute;
+        text-align: center;
+        font-size: 13rem;
+        font-weight: 900;
+        top: 30rem;
+        //z-index: 1;
+        color: rgba(255,255,255,0.04);
+      }
+    }
   }
 
  .tom-map{

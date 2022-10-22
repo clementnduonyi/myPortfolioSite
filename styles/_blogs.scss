@@ -12,7 +12,7 @@
   background-color: #ecedee;
 
   &-content{
-    padding: 120px 0 150px 0 ;
+    padding: 150px 0 150px 0 ;
   }
 
   h3{
@@ -35,7 +35,7 @@
       &:focus,
       &:hover {
         text-decoration: underline;
-        color: #ffff00;
+        color: #bf1650;
       }
       > .post-title {
         font-size: 30px;
@@ -57,11 +57,11 @@
       color: #ffff;
       > a {
         text-decoration: none;
-        color: #ffff00;
+        color: #bf1650;
         &:focus,
         &:hover {
           text-decoration: underline;
-          color: #ffff00;
+          color: #bf1650;
         }
       }
     }
@@ -123,7 +123,7 @@
       font-size: 50px;
       margin-top: 0;
       font-weight: 700;
-      color: #ffff00;
+      color: #bf1650;
     }
     .subheading {
       font-size: 24px;
@@ -222,7 +222,7 @@
   }
 
   a{
-    color: #ffff00;
+    color: #bf1650;
     text-decoration: none;
   }
 
@@ -247,7 +247,7 @@
 }
 
 .card-border-orange{
-  border-top: 2px #ffff00;
+  border-top: 2px #bf1650;
 }
 
 .card-border-white{

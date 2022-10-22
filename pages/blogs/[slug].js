@@ -65,7 +65,7 @@ const BlogDetails = ({blog, author, blogs}) => {
                             <SideBar />
                         </Col>
                         
-                        <Row>
+                        <Row className="mt-5">
                             <Col>
                                 <h2>Related Posts</h2>
                                 {blogs.map(rBlog =>
