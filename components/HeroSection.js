@@ -25,11 +25,11 @@ const HeroSection = () => {
                 <div className="front">
                     <div className="image image-1">
                         <div className="hero-section-content">
-                        <h2 className='bio-statck'>Web Developer</h2>
-                            <div className="hero-section-content-intro">
-                            <Link href="/projects"className='position-absolute home-page-pj-link'>
-                                Have a look at my portfolio and job history.
-                            </Link>
+                        <h1 className='bio-statck'>Web Developer</h1>
+                            <div className="position-relative hero-section-content-intro">
+                            <h2>
+                                Javascript <span className='pipe'>|</span> NodeJs <span className='pipe'>|</span>  ExpressJs <span className='pipe'>|</span> NextJs <span className='pipe'>|</span> Ruby on Rails <span className='pipe'>|</span> ReactJs <span className='pipe'>|</span>  Bootstrap <span className='pipe'>|</span> Bulma <span className='pipe'>|</span>  SASS <span className='pipe'>|</span> CSS <span className='pipe'>|</span> HTML.
+                            </h2>
                             </div>
                         </div>
                     </div>
@@ -40,11 +40,11 @@ const HeroSection = () => {
                 <div className="back">
                     <div className="image image-2">
                         <div className="hero-section-content">
-                            <h2 className='bio-statck'>Web Developer</h2>
-                            <div className="hero-section-content-intro">
-                                <Link href="/projects"className='position-absolute home-page-pj-link'>
-                                    Have a look at my portfolio and job history.
-                                </Link>
+                            <h1 className='bio-statck'>Web Developer</h1>
+                            <div className="position-relative hero-section-content-intro">
+                                <h2>
+                                    Javascript <span className='pipe'>|</span> NodeJs <span className='pipe'>|</span>  ExpressJs <span className='pipe'>|</span> NextJs <span className='pipe'>|</span> Ruby on Rails <span className='pipe'>|</span> ReactJs <span className='pipe'>|</span>  Bootstrap <span className='pipe'>|</span> Bulma <span className='pipe'>|</span>  SASS <span className='pipe'>|</span> CSS <span className='pipe'>|</span> HTML.
+                                </h2>
                             </div>
                         </div>
                     </div>

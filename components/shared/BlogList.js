@@ -13,7 +13,7 @@ const BlogList = ({blog}) =>
                     <CardTitle className="post-title" tag="h3" style={{color: "#bf1650"}}>
                         {blog.title.substr(0, 25)}
                     </CardTitle>
-                    <CardSubtitle className="mb-2" style={{color: "#fff"}} tag="h5">
+                    <CardSubtitle className="mb-2" style={{color: "#b4b4b4"}} tag="h5">
                         {`${blog.subTitle.substr(0, 75)}...`}
                     </CardSubtitle>
                     <CardImg className="mb-2" tag="h5">
@@ -24,9 +24,9 @@ const BlogList = ({blog}) =>
                     </CardImg>
                 </a>
             </Link>
-            <p className="post-meta"><small style={{color: "#fff"}}>Written by
+            <p className="post-meta"><small style={{color: "#b4b4b4"}}>Written by
             <a className="post-meta" href="#" style={{color: "#bf1650"}}> { blog.author.name } </a></small> <br />
-            <small style={{color: "#fff"}}> {new Date(blog.createdAt).toDateString()}</small>
+            <small style={{color: "#b4b4b4"}}> {new Date(blog.createdAt).toDateString()}</small>
             </p>
         </CardBody>
     </Card>

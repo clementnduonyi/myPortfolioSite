@@ -31,7 +31,7 @@ const BasePage = props => {
       <meta property="og:type" key="og:type" content="website" />
       <meta property="og:description" key="og:description" content={`${metaDescription.substr(0, 76)}...`} />
       <meta property="og:image" key="og:image" content={`${process.env.BASE_URL}/images/Headshot.png`} />
-      <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,900;1,300;1,900&display=swap" rel="stylesheet" /> 
+      <link href="https://fonts.googleapis.com/css2?family=Changa:wght@200;300;400;500;600;700;800&family=Marck+Script&family=Tangerine:wght@400;700&display=swap" rel="stylesheet" /> 
       <link
       rel="canonical" 
       href={`${process.env.BASE_URL}${canonicalPath ? canonicalPath : router.asPath}`} />

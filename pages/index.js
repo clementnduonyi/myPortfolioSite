@@ -60,24 +60,22 @@ const Home = ({blogs, projects}) => {
               where I demonstrates good understanding of some cutting edge web technologies.
             </p>
           </div>
-          <div>
-            <Row className="mb-3 project-page-idxrow">
-              {projects && projects.map(project =>
-                  <Col 
-                  onClick={() => router.push('/projects/[id]', `projects/${project._id}`)}
-                  key={project._id}  md={{size: 4}}>
-                      <ProjectCard project = {project} ></ProjectCard>
-                  </Col>
-                  )
-              }
-              <div className="hero-welcome-bio position-relative mb-6">
-                <Link href="/projects"className='position-absolute home-page-pj-link'>
-                  Explore more projects
-                </Link>
-                <span> &rarr;</span>
-              </div>
-            </Row>
-          </div> 
+          <Row className="mb-3 project-page-idxrow">
+            {projects && projects.map(project =>
+                <Col 
+                onClick={() => router.push('/projects/[id]', `projects/${project._id}`)}
+                key={project._id}  md={{size: 4}}>
+                    <ProjectCard project = {project} ></ProjectCard>
+                </Col>
+                )
+            }
+            <div className="hero-welcome-bio position-relative mb-6">
+              <Link href="/projects"className='position-absolute home-page-pj-link'>
+                Explore more projects
+              </Link>
+              <span> &rarr;</span>
+            </div>
+          </Row>
         </section>
        
         <section className="blog-listing-page-content blog-page-indexcontent">
@@ -91,11 +89,11 @@ const Home = ({blogs, projects}) => {
               </Col>
             )}
             <div className="hero-welcome-bio position-relative">
-                <Link href="/blogs"className='position-absolute home-page-pj-link'>
-                  Read more blog
-                </Link>
-                <span> &rarr;</span>
-              </div>
+              <Link href="/blogs"className='position-absolute home-page-pj-link'>
+                Read more blog
+              </Link>
+              <span> &rarr;</span>
+            </div>
           </Row>
         </section>
 

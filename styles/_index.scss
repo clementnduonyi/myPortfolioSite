@@ -97,7 +97,6 @@
   overflow: hidden;
   position: relative;
 }
-//#1d1d1d #00aeef #096fb9 #081229 #0e101c
 .wrapper {
   min-height: 100vh;
   min-width: 100vw;
@@ -116,13 +115,11 @@
   height: 530px;
   margin-bottom: 40px;
   h2 {
-    color: white;
     font-weight: bold;
     margin-bottom: 10px;
   }
 
   perspective: 1000px;
-  color: white;
   width: 400px;
   position: relative;
 
@@ -134,13 +131,15 @@
     //z-index: 1;
 
     &-intro {
-      font-size: 17px;
-
-      a{
-        text-decoration: none;
+      h2{
+        font-size: 17px;
         color: #bf1650;
-      }
 
+        .pipe{
+          color: #b4b4b4;
+          font-size: 20px;
+        }
+      }
     }
   }
 
@@ -166,7 +165,6 @@
 
 .hero-welcome-text {
   h1{
-    //text-transform: uppercase;
     font-style: italic;
     margin-top: 80px;
   }
@@ -178,12 +176,11 @@
   }
 
   h3, p{
-    color: #ffff
-  }
-
-  h3{
+    color: #b4b4b4;
     font-size: 20px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    line-height: 20px;
+    word-spacing: 0px;
+    font-weight: 400;
   }
 
  
@@ -192,7 +189,6 @@
 .hero-welcome-bio a{
   text-decoration: none;
   color: #bf1650;
-  //font-size: 50px;
 }
 
 .hero-welcome-bio a:hover{
@@ -230,7 +226,7 @@
       font-size: 22rem;
       font-weight: 900;
       top: 40rem;
-      left: 25vw;
+      left: 30vw;
       //z-index: 1;
       color: rgba(255,255,255,0.04);
     }
@@ -251,7 +247,7 @@
       }
     }
     p{
-      color: #ffff;
+      color: #b4b4b4;
     }
   }
 }
@@ -261,12 +257,12 @@
     width: 100%;
     .fake-bg{
       position: absolute;
-      margin-top: 20px;
+      margin-top: 5rem;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
       font-size: 22rem;
       font-weight: 900;
       top: 90rem;
-      left: -10vw;
-      //z-index: 1;
+      left: -7vw;
       color: rgba(255,255,255,0.04);
     }
    
@@ -284,7 +280,7 @@
   }
 
  &-idxrow{
-    margin-top: 10rem;
+    margin-top: 14rem;
   }
 
 }
@@ -317,13 +313,20 @@
     &-indexcontent{
   
       .fake-bg{
-        position: absolute;
-        text-align: center;
         font-size: 13rem;
         font-weight: 900;
         top: 30rem;
-        //z-index: 1;
-        color: rgba(255,255,255,0.04);
+      }
+    }
+  }
+
+  .blog-page{
+    &-indexcontent{
+      width: 100%;
+      .fake-bg{
+        font-size: 13rem;
+        font-weight: 900;
+        top: 130rem;
       }
     }
   }
@@ -364,7 +367,7 @@
 }
 
 .shadow-custom-orange {
-  border: 2px solid #ffff; //#bf1650; #f37d49;
+  border: 2px solid #b4b4b4; //#bf1650; #f37d49;
   box-shadow: -17px 13px 41px rgba(13,78,158,0.3);
 }
 

@@ -25,11 +25,12 @@ const HeroWelcome = () => {
     return(
         <>
         <div className="hero-welcome-text">
-            <h1 className={`title ${createFadeInClass()}`}>Hi!</h1>
-            <h2 className={`subtitle ${createFadeInClass()}`}>I&apos;m Clement Nduonyi,</h2>
+            <h1 data-aos="fade-down" data-aos-duration="1000">Hi!</h1>
+            <h2 data-aos="fade-right" data-aos-duration="1500">I&apos;m Clement Nduonyi,</h2>
             <h3 className={`subsubTitle ${createFadeInClass()}`}>
-            an experienced web/software developer. I have an applied knowledge of some cutting edge web development technologies, including <br/>
-            <span className='fs-3' style={{color: '#bf1650'}}>
+                an experienced web/software developer. I have an applied knowledge of some cutting edge web development technologies.
+            </h3>
+            {/*<span className='fs-3' style={{color: '#bf1650'}}>
                 <FontAwesomeIcon icon={faArrowDown} bounce/>
             </span>
             </h3>
@@ -43,8 +44,8 @@ const HeroWelcome = () => {
                 showCursor
                 className='self-typed'
                 cursorChar='|' 
-            />
-            <p className={`cta-info ${createFadeInClass()}`}>Come right in, get informed, collaborate and discover projects I was working on through the years!</p>
+    />*/}
+            <p className={`cta-info ${createFadeInClass()}`}>Come right in, and discover projects I was working on through the years!</p>
         </div>
         
         <div className="hero-welcome-bio position-relative">
