@@ -47,7 +47,7 @@ const BlogDetails = ({blog, author, blogs}) => {
                                 setContents={blog.body}
                                 hideToolbar={true} 
                                 disable={true}
-                                height='500px'
+                                height='auto'
                                 width='100%'
                                 readOnly
                                 setOptions={{
