@@ -65,6 +65,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({params}) {
   const {data: {blogsWithUsers, category}} = await new CategoryApi().getBySlug(params.slug)
   const blogs = blogsWithUsers.map(blogPost => ({...blogPost.blog, author: blogPost.author}))
+ 
   
   return {props: {blogs, category}, revalidate: 1}
 }
